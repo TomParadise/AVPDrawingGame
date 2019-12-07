@@ -1,0 +1,71 @@
+ManifestFileVersion: 0
+CRC: 2315636500
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d42b262b7248c6a90554428e63f279dc
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 635df626bbe536d40474c28d627aa00e
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+Assets:
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_grip_button_anim.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_joy_NW_anim.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_button01_anim.fbx
+- Assets/ExampleAssets/Models/Workshop_Set.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_neutral_trigger_pull_mask_anim.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_joy_S_anim.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_neutral_button02_mask_anim.fbx
+- Assets/ExampleAssets/Models/paintbucket_low.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_joy_W_anim.fbx
+- Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Right.fbx
+- Assets/ExampleAssets/Models/ConstructionLight_Low.fbx
+- Assets/ExampleAssets/Models/brush_low.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_joy_E_anim.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_button02_anim.fbx
+- Assets/ExampleAssets/Models/Workbench.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_neutral_button01_mask_anim.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_neutral_grip_button_mask_anim.fbx
+- Assets/ExampleAssets/Models/hammer_low.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_joy_S_anim.fbx
+- Assets/ExampleAssets/Models/safetygoggles_low.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_joy_NW_anim.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_neutral_button02_mask_anim.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_joy_W_anim.fbx
+- Assets/ExampleAssets/Models/jigsaw_low.fbx
+- Assets/ExampleAssets/Models/Workbench_Low.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_neutral_grip_button_mask_anim.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_joy_SW_anim.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Models/right_touch_controller_model_skel.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_neutral_button01_mask_anim.fbx
+- Assets/ExampleAssets/Models/Stud.fbx
+Dependencies:
+- D:/AVPDemo/OVRAssetBundles/OVRMasterBundle/asset_fbx1
+- D:/AVPDemo/OVRAssetBundles/OVRMasterBundle/asset_tif0
+- D:/AVPDemo/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- D:/AVPDemo/OVRAssetBundles/OVRMasterBundle/asset_shader0

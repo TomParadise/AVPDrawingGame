@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 3178755551
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ece778cbd4e064d0333bdbc8fe1f9aa4
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/Word Bank.txt
+Dependencies: []

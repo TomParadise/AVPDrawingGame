@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e1359258fd7a46644b63ea5a0ad4792a
+guid: b804a1fc6e5067945b128d961839bbe7
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Grass
-    second: {fileID: 2100000, guid: 0dfa6c231e40fbb45bda28da3d3ada22, type: 2}
+      name: TreesArray
+    second: {fileID: 2100000, guid: 6ab8bfb6adcece04db3e6b9ebf757fd9, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

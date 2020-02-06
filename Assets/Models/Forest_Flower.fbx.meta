@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e1359258fd7a46644b63ea5a0ad4792a
+guid: a902005dbc0ec0449a9c9a225992822d
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Grass
-    second: {fileID: 2100000, guid: 0dfa6c231e40fbb45bda28da3d3ada22, type: 2}
+      name: BaseFlower
+    second: {fileID: 2100000, guid: 8bc0dc12d06fdb442b1c27473bf6eafe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MiddleFlower
+    second: {fileID: 2100000, guid: 8bc0dc12d06fdb442b1c27473bf6eafe, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

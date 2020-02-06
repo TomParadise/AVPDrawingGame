@@ -23,7 +23,7 @@ public class WordBank : MonoBehaviour
         if (timer <= 0.0f)
         {
             timer = 1.0f;
-            int i = Random.Range(0, 999);
+            int i = Random.Range(0, 850);
             Debug.Log(dataLines[i]);
             Text.text = dataLines[i];
             //Text.text = "Enter Your Text Here";

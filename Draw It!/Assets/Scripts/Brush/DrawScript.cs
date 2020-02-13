@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DrawScript : MonoBehaviour
 {
+    public GameObject brushWidthMenu;
+
     public TrailRenderer whiteTrail;
     public TrailRenderer RedTrail;
     public TrailRenderer BlueTrail;
@@ -69,5 +71,32 @@ public class DrawScript : MonoBehaviour
             }
             GetComponent<MeshRenderer>().materials[2].color = newColour;            
         }
+        else if (other.tag == "Width Button")
+        {
+            AnimationCurve newWidth = new AnimationCurve();
+            switch (other.name)
+            {
+                case "Small":
+                    newWidth.AddKey(0.015f, 0.0f);
+                    break;
+                case "Medium":
+                    newWidth.AddKey(0.03f, 0.0f);
+                    break;
+                case "Large":
+                    newWidth.AddKey(0.045f, 0.0f);
+                    break;
+            }
+            setWidth(newWidth);
+            brushWidthMenu.GetComponent<BrushWidthMenu>().setButtonSprites(other.GetComponent<SpriteRenderer>());
+        }
+    }
+
+    private void setWidth(AnimationCurve _newWidth)
+    {
+        whiteTrail.widthCurve = _newWidth;
+        RedTrail.widthCurve = _newWidth;
+        BlueTrail.widthCurve = _newWidth;
+        YellowTrail.widthCurve = _newWidth;
+        GreenTrail.widthCurve = _newWidth;
     }
 }

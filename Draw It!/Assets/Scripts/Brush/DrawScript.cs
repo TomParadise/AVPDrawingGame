@@ -6,19 +6,21 @@ public class DrawScript : MonoBehaviour
 {
     public GameObject brushWidthMenu;
 
-    public TrailRenderer whiteTrail;
-    public TrailRenderer RedTrail;
-    public TrailRenderer BlueTrail;
-    public TrailRenderer YellowTrail;
-    public TrailRenderer GreenTrail;
+    public TrailRenderer[] WhiteTrails = new TrailRenderer[3];
+    public TrailRenderer[] RedTrails = new TrailRenderer[3];
+    public TrailRenderer[] GreenTrails = new TrailRenderer[3];
+    public TrailRenderer[] BlueTrails = new TrailRenderer[3];
+    public TrailRenderer[] YellowTrails = new TrailRenderer[3];
     private bool isActive = false;
 
     private TrailRenderer trail;
+    private int currentWidth = 1;
+    private string currentColour = "White";
 
     // Start is called before the first frame update
     void Start()
     {
-        trail = whiteTrail;
+        trail = WhiteTrails[currentWidth];
     }
 
     // Update is called once per frame
@@ -43,60 +45,63 @@ public class DrawScript : MonoBehaviour
     {      
         if(other.tag == "Colour")
         {
-            Color newColour;
-            switch(other.name)
+            if(ChangeTrail(other.name, true))
             {
-                case "Red":
-                    newColour = Color.red;
-                    trail = RedTrail;
-                    break;
-                case "Green":
-                    newColour = Color.green;
-                    trail = GreenTrail;
-                    break;
-                case "Yellow":
-                    newColour = Color.yellow;
-                    trail = YellowTrail;
-                    break;
-                case "Blue":
-                    newColour = Color.blue;
-                    trail = BlueTrail;
-                    break;
-                case "White":
-                    newColour = Color.white;
-                    trail = whiteTrail;
-                    break;
-                default:
-                    return;
+                currentColour = other.name;
             }
-            GetComponent<MeshRenderer>().materials[2].color = newColour;            
         }
         else if (other.tag == "Width Button")
         {
-            AnimationCurve newWidth = new AnimationCurve();
             switch (other.name)
             {
                 case "Small":
-                    newWidth.AddKey(0.015f, 0.0f);
+                    currentWidth = 0;
                     break;
                 case "Medium":
-                    newWidth.AddKey(0.03f, 0.0f);
+                    currentWidth = 1;
                     break;
                 case "Large":
-                    newWidth.AddKey(0.045f, 0.0f);
+                    currentWidth = 2;
                     break;
             }
-            setWidth(newWidth);
+            ChangeTrail(currentColour, false);
             brushWidthMenu.GetComponent<BrushWidthMenu>().setButtonSprites(other.GetComponent<SpriteRenderer>());
         }
     }
 
-    private void setWidth(AnimationCurve _newWidth)
+    private bool ChangeTrail(string _colour, bool changeTip)
     {
-        whiteTrail.widthCurve = _newWidth;
-        RedTrail.widthCurve = _newWidth;
-        BlueTrail.widthCurve = _newWidth;
-        YellowTrail.widthCurve = _newWidth;
-        GreenTrail.widthCurve = _newWidth;
+        Color newColour;
+
+        switch (_colour)
+        {
+            case "Red":
+                newColour = Color.red;
+                trail = RedTrails[currentWidth];
+                break;
+            case "Green":
+                newColour = Color.green;
+                trail = GreenTrails[currentWidth];
+                break;
+            case "Yellow":
+                newColour = Color.yellow;
+                trail = YellowTrails[currentWidth];
+                break;
+            case "Blue":
+                newColour = Color.blue;
+                trail = BlueTrails[currentWidth];
+                break;
+            case "White":
+                newColour = Color.white;
+                trail = WhiteTrails[currentWidth];
+                break;
+            default:
+                return false;
+        }
+        if (changeTip)
+        {
+            GetComponent<MeshRenderer>().materials[2].color = newColour;
+        }
+        return true;
     }
 }

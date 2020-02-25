@@ -26,17 +26,12 @@ public class DrawScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("Oculus_CrossPlatform_SecondaryIndexTrigger") != 0)
+        if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) != 0)
         {
-            if(!isActive)
-            {
-                isActive = true;
-                trail.emitting = true;
-            }
+            trail.emitting = true;
         }
-        else if(isActive)
+        else 
         {
-            isActive = false;
             trail.emitting = false;
         }
     }

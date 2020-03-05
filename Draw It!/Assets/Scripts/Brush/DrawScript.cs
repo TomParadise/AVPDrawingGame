@@ -11,9 +11,13 @@ public class DrawScript : MonoBehaviour
     public ParticleSystem[] GreenTrails = new ParticleSystem[3];
     public ParticleSystem[] BlueTrails = new ParticleSystem[3];
     public ParticleSystem[] YellowTrails = new ParticleSystem[3];
-    private bool isActive = false;
+
+    public Transform brushtip;
+
+    private bool drawing = false;
 
     private ParticleSystem trail;
+    ParticleSystem.Particle[] particles;
     private int currentWidth = 1;
     private string currentColour = "White";
 
@@ -21,25 +25,35 @@ public class DrawScript : MonoBehaviour
     void Start()
     {
         trail = WhiteTrails[currentWidth];
+        particles = new ParticleSystem.Particle[trail.main.maxParticles];
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(trail.particleCount);
         if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) != 0)
         {
-            if (!trail.isPlaying)
+            if (!drawing)
             {
-                trail.Play();
+                Debug.Log("on");
+                trail.Emit(1);
+                drawing = true;
             }
         }
-        else 
+        else
         {
-            if (trail.isPlaying)
+            if (drawing)
             {
-                trail.Pause(true);
+                trail.GetParticles(particles);
+                for (int i = 0; i < trail.particleCount; i++)
+                {
+                    particles[i].remainingLifetime = 0.01f;
+                }
+                trail.SetParticles(particles);
+                Debug.Log("off");
+                drawing = false;
             }
-            //trail.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         }
     }
 

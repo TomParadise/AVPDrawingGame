@@ -1,0 +1,656 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8547144385508324476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Drawing
+  m_EditorClassIdentifier: 
+  Name: Drawing
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &-8507570391872982210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DrawItAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190385541979711
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-7374489648788410944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DrawItAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190405948343480
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-6505004817112046843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DrawItAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190398582627344
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-4926538885492468051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Drawing
+  m_EditorClassIdentifier: 
+  Name: Drawing
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &-4509976066317743394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DrawItAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190392051110673
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-4490050090530169488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DrawItAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190384597373031
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-3444000405364625814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Drawing
+  m_EditorClassIdentifier: 
+  Name: Drawing
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
+--- !u!114 &-3361566987113151328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DrawItAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190388415859239
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-3309438845183419371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Drawing
+  m_EditorClassIdentifier: 
+  Name: Drawing
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &-3052516303374275760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../Program Files/FMOD SoundSystem/FMOD Studio 2.00.08/Projects/DrawItAudio/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637190328492768485
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 688
+  Exists: 0
+--- !u!114 &-2888278739838590345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../Program Files/FMOD SoundSystem/FMOD Studio 2.00.08/Projects/DrawItAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190328492748608
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-2410667913407267741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/painting
+  m_EditorClassIdentifier: 
+  Path: event:/painting
+  guid: 8ed4edc82d0c7141a32d82f60c6ae7e4
+  Banks: []
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 18808
+--- !u!114 &-2273449586882490553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Drawing
+  m_EditorClassIdentifier: 
+  Name: Drawing
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
+--- !u!114 &-2200123101056302171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DrawItAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190376150168531
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-1769991330042433115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DrawItAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190396737543105
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-864588105354607885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DrawItAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190383679343024
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-101279466906219519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DrawItAudio/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637190410195477918
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 798
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -101279466906219519}
+  - {fileID: 5038929967110438822}
+  EditorEvents:
+  - {fileID: 6575310750598119734}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 5038929967110438822}
+  StringsBanks:
+  - {fileID: -101279466906219519}
+  stringsBankWriteTime: 637190410195477918
+  cacheVersion: 3
+--- !u!114 &8641153008605126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Drawing
+  m_EditorClassIdentifier: 
+  Name: Drawing
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &52218991727385008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DrawItAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190382000126777
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &254390881991413670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Drawing
+  m_EditorClassIdentifier: 
+  Name: Drawing
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &1141336340370743218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DrawItAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190407546800096
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &2053823386113203696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/painting/Drawing
+  m_EditorClassIdentifier: 
+  Name: Drawing
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 1
+--- !u!114 &3241590140495127494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DrawItAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190393398438233
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &4036350665130241306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Drawing
+  m_EditorClassIdentifier: 
+  Name: Drawing
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &4073535004173299289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Drawing
+  m_EditorClassIdentifier: 
+  Name: Drawing
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &4401799728495537123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DrawItAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190393545859276
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &5038929967110438822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DrawItAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190410195428057
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &5919772773141963237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/painting/Drawing
+  m_EditorClassIdentifier: 
+  Name: Drawing
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
+--- !u!114 &6575310750598119734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Painting_events/painting
+  m_EditorClassIdentifier: 
+  Path: event:/Painting_events/painting
+  guid: 8ed4edc82d0c7141a32d82f60c6ae7e4
+  Banks:
+  - {fileID: 5038929967110438822}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 2053823386113203696}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16200
+--- !u!114 &6703793876049315251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DrawItAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190370983388660
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &7158282364132465042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/DrawItAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190397480638963
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &7330135597128887814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Drawing
+  m_EditorClassIdentifier: 
+  Name: Drawing
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &8040109347518936052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Drawing
+  m_EditorClassIdentifier: 
+  Name: Drawing
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &8119812507355366214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Drawing
+  m_EditorClassIdentifier: 
+  Name: Drawing
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0

@@ -21,37 +21,46 @@ public class DrawScript : MonoBehaviour
     private int currentWidth = 1;
     private string currentColour = "White";
 
+    public Transform playerTransform;
+    public Rigidbody playerRigidBody;
+
+    [FMODUnity.EventRef]
+    FMOD.Studio.EventInstance paintingAudioEvent; //the event
+
+
     // Start is called before the first frame update
     void Start()
     {
         trail = WhiteTrails[currentWidth];
         particles = new ParticleSystem.Particle[trail.main.maxParticles];
-    }
+        paintingAudioEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Painting_events/painting");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(paintingAudioEvent, playerTransform, playerRigidBody);
+    }    
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(trail.particleCount);
-        if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) != 0)
+        if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) >= 0.5f)
         {
             if (!drawing)
             {
-                Debug.Log("on");
                 trail.Emit(1);
                 drawing = true;
+                paintingAudioEvent.setParameterByName("Drawing", 1.0f, true);
+                paintingAudioEvent.start();
             }
         }
         else
         {
             if (drawing)
             {
+                paintingAudioEvent.setParameterByName("Drawing", 0.0f, true);
                 trail.GetParticles(particles);
                 for (int i = 0; i < trail.particleCount; i++)
                 {
                     particles[i].remainingLifetime = 0.01f;
                 }
                 trail.SetParticles(particles);
-                Debug.Log("off");
                 drawing = false;
             }
         }

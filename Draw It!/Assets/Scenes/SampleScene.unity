@@ -404,6 +404,47 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e186fd10a8693b419f7b0b255beee38, type: 3}
+--- !u!1 &349963326 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100004, guid: ce816f2e6abb0504092c23ed9b970dfd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1114040580}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &349963327 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400008, guid: ce816f2e6abb0504092c23ed9b970dfd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1114040580}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &349963331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349963326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
+--- !u!54 &349963332
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349963326}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &401621369
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,7 +668,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.7e-44, y: 7.1e-44, z: 2.2959e-41, w: 0}
+  m_BoundingSphereOverride: {x: 0.078125, y: 0.06640625, z: 0.02734375, w: -0.03125}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1201,6 +1242,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.518
       objectReference: {fileID: 0}
+    - target: {fileID: 8100000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
 --- !u!1 &1371430114
@@ -1305,6 +1350,16 @@ PrefabInstance:
       propertyPath: brushWidthMenu
       value: 
       objectReference: {fileID: 1499432688}
+    - target: {fileID: 7884083651438313682, guid: ca58cdc8e441125468a8be32f0a9c2cd,
+        type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 349963327}
+    - target: {fileID: 7884083651438313682, guid: ca58cdc8e441125468a8be32f0a9c2cd,
+        type: 3}
+      propertyPath: playerRigidBody
+      value: 
+      objectReference: {fileID: 349963332}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca58cdc8e441125468a8be32f0a9c2cd, type: 3}
 --- !u!1 &1499432688

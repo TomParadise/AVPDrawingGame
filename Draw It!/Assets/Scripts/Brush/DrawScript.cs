@@ -28,12 +28,18 @@ public class DrawScript : MonoBehaviour
     {
         if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) != 0)
         {
-            trail.Play();
+            if (!trail.isPlaying)
+            {
+                trail.Play();
+            }
         }
         else 
         {
+            if (trail.isPlaying)
+            {
+                trail.Pause(true);
+            }
             //trail.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-            trail.Pause(true);
         }
     }
 

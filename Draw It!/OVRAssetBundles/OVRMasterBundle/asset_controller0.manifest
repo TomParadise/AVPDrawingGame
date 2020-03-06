@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 1002704450
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 662bcd46df514361519fe93604f1fe05
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: fdf6c57a251b9f6ec27bdd2fe01b033c
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+Assets:
+- Assets/Oculus/SampleFramework/Core/TouchControllers/LeftControllerAnimator.controller
+- Assets/Oculus/SampleFramework/Core/TouchControllers/RightControllerAnimator.controller
+Dependencies:
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_fbx0
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_fbx1

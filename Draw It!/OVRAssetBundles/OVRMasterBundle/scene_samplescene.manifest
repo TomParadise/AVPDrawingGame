@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 810665064
+CRC: 2522726771
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 50ecdc7d35a50cd40a163518bf6e5fce
+    Hash: b809cd09fcaffdfc5a9d05affdb9ae58
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 69a3bd4228f3b7ff6c3492614b8c7694
+    Hash: fc7618c33814aae8a48894c607d408eb
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -29,13 +29,21 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 49
   Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
 - Class: 64
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 74
   Script: {instanceID: 0}
 - Class: 81
   Script: {instanceID: 0}
 - Class: 89
   Script: {instanceID: 0}
 - Class: 90
+  Script: {instanceID: 0}
+- Class: 91
   Script: {instanceID: 0}
 - Class: 95
   Script: {instanceID: 0}
@@ -48,7 +56,11 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: df9f338034892c44ebb62d97894772f1, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 6f186ee0622054e4693ce83162d85e7b, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 7e933e81d3c20c74ea6fdc708a67e3a5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 370f36429eb178248886f95e10097abe, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 0950df82e7936c84983497630bde5b54, type: 3}
 - Class: 114
@@ -58,15 +70,13 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: f32bf33a01f9df345a24eba394ed98af, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 4f07515ada089df47868559a20dd6783, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 6f186ee0622054e4693ce83162d85e7b, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: f32bf33a01f9df345a24eba394ed98af, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -74,6 +84,14 @@ ClassTypes:
 - Class: 143
   Script: {instanceID: 0}
 - Class: 157
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
   Script: {instanceID: 0}
 - Class: 222
   Script: {instanceID: 0}
@@ -86,6 +104,8 @@ Assets:
 Dependencies:
 - D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_resources
 - D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_fbx0
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_controller0
 - D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_txt0
 - D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_png0
 - D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_prefab0

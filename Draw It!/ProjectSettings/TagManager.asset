@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Colour
   - Width Button
+  - Hand
   layers:
   - Default
   - TransparentFX

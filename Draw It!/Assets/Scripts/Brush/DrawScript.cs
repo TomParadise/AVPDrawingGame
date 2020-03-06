@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class DrawScript : MonoBehaviour
 {
-    public GameObject brushWidthMenu;
+    [SerializeField] private GameObject brushWidthMenu;
 
-    public ParticleSystem[] WhiteTrails = new ParticleSystem[3];
-    public ParticleSystem[] RedTrails = new ParticleSystem[3];
-    public ParticleSystem[] GreenTrails = new ParticleSystem[3];
-    public ParticleSystem[] BlueTrails = new ParticleSystem[3];
-    public ParticleSystem[] YellowTrails = new ParticleSystem[3];
+    [SerializeField] private ParticleSystem[] WhiteTrails = new ParticleSystem[3];
+    [SerializeField] private ParticleSystem[] RedTrails = new ParticleSystem[3];
+    [SerializeField] private ParticleSystem[] GreenTrails = new ParticleSystem[3];
+    [SerializeField] private ParticleSystem[] BlueTrails = new ParticleSystem[3];
+    [SerializeField] private ParticleSystem[] YellowTrails = new ParticleSystem[3];
 
-    public Transform brushtip;
+    [SerializeField] private Transform brushtip;
 
     private bool drawing = false;
 
@@ -31,12 +31,11 @@ public class DrawScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(trail.particleCount);
         if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) != 0)
         {
             if (!drawing)
             {
-                Debug.Log("on");
+                //Debug.Log("on");
                 trail.Emit(1);
                 drawing = true;
             }
@@ -51,7 +50,7 @@ public class DrawScript : MonoBehaviour
                     particles[i].remainingLifetime = 0.01f;
                 }
                 trail.SetParticles(particles);
-                Debug.Log("off");
+                //Debug.Log("off");
                 drawing = false;
             }
         }

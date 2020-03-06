@@ -126,6 +126,7 @@ public class DrawScript : MonoBehaviour
         if (changeTip)
         {
             GetComponent<MeshRenderer>().materials[2].color = newColour;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Colour_change/colour_change", transform.position);
         }
         return true;
     }

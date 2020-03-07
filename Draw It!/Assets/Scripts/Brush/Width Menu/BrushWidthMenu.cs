@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class BrushWidthMenu : MonoBehaviour
 {
-    public Transform aimTarget;
-    public Transform cameraTransform;
+    [SerializeField] private Transform aimTarget;//Target for the player to look at
+    [SerializeField] private Transform cameraTransform;//Player camera transform
 
-    public Transform startPos;
-    public Transform targetPos;
+    [SerializeField] private Transform startPos;//Where the menu begins
+    [SerializeField] private Transform targetPos;//Where the menu moves to
 
-    public SpriteRenderer[] buttons = new SpriteRenderer[3];
-    public Sprite onSprite;
-    public Sprite offSprite;
+    [SerializeField] private SpriteRenderer[] buttons = new SpriteRenderer[3];//The 3 button sprites
+    [SerializeField] private Sprite onSprite;//The sprite for inactive buttons
+    [SerializeField] private Sprite offSprite;//The sprite for active buttons
     
     private float speed = 5.0f;
 
@@ -26,18 +26,21 @@ public class BrushWidthMenu : MonoBehaviour
     {
     //https://forums.oculusvr.com/developer/discussion/4198/tip-detecting-where-the-player-looks-at
 
+        //calculate dot product to check if player is looking in the area of the palette
         float dot = 
             Vector3.Dot(
                 (aimTarget.position - cameraTransform.position)
                 .normalized,
                 cameraTransform.forward);
 
+        //if player is looking, move the width menu up and fade it in
         if(0.85f < dot && dot <= 1)
         {
             //move menu up and fade in
             transform.position = Vector3.Lerp(transform.position, targetPos.position, speed * Time.deltaTime);
             fade(1.0f);
         }
+        //if player is not looking move the width menu down and fade it out
         else
         {
             //move menu down and fade away
@@ -46,6 +49,7 @@ public class BrushWidthMenu : MonoBehaviour
         }
     }
 
+    //fade towards the input target
     private void fade(float target)
     {
         Color tempcolor = gameObject.GetComponent<SpriteRenderer>().color;
@@ -57,6 +61,7 @@ public class BrushWidthMenu : MonoBehaviour
         }
     }
 
+    //set the 3 button sprites when one is selected
     public void setButtonSprites(SpriteRenderer Button)
     {
         foreach(SpriteRenderer i in buttons)

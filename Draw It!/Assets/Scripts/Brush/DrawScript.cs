@@ -24,6 +24,7 @@ public class DrawScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //set current colour to white and width to normal
         trail = WhiteTrails[currentWidth];
         particles = new ParticleSystem.Particle[trail.main.maxParticles];
     }
@@ -31,6 +32,7 @@ public class DrawScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if pressing the trigger emit 1 particle
         if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) != 0)
         {
             if (!drawing)
@@ -40,24 +42,19 @@ public class DrawScript : MonoBehaviour
                 drawing = true;
             }
         }
+        //if not pressing the trigger kill particles but keep current trails
         else
         {
             if (drawing)
             {
-                trail.GetParticles(particles);
-                for (int i = 0; i < trail.particleCount; i++)
-                {
-                    particles[i].remainingLifetime = 0.01f;
-                }
-                trail.SetParticles(particles);
-                //Debug.Log("off");
-                drawing = false;
+                stopDrawing();
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {      
+        //if collided with colour option change particle system and brush tip
         if(other.tag == "Colour")
         {
             if(ChangeTrail(other.name, true))
@@ -65,6 +62,7 @@ public class DrawScript : MonoBehaviour
                 currentColour = other.name;
             }
         }
+        //if collided with width option change particle system and call width menu to set the button to 'on'
         else if (other.tag == "Width Button")
         {
             switch (other.name)
@@ -84,6 +82,8 @@ public class DrawScript : MonoBehaviour
         }
     }
 
+    //change trail to input colour and current width
+    //change tip colour to input colour if wanted
     private bool ChangeTrail(string _colour, bool changeTip)
     {
         Color newColour;
@@ -118,5 +118,62 @@ public class DrawScript : MonoBehaviour
             GetComponent<MeshRenderer>().materials[2].color = newColour;
         }
         return true;
+    }
+
+    public void stopDrawing()
+    {
+        trail.GetParticles(particles);
+        for (int i = 0; i < trail.particleCount; i++)
+        {
+            particles[i].remainingLifetime = 0.01f;
+        }
+        trail.SetParticles(particles);
+        //Debug.Log("off");
+        drawing = false;
+    }
+
+    //loop through all particle systems and set remaining life to 0 so trails die
+    public void KillTrails()
+    {
+        foreach (ParticleSystem particleSystem in WhiteTrails)
+        {
+            for (int i = 0; i < particleSystem.particleCount; i++)
+            {
+                particles[i].remainingLifetime = 0;
+            }
+            particleSystem.SetParticles(particles);
+        }
+        foreach (ParticleSystem particleSystem in RedTrails)
+        {
+            for (int i = 0; i < particleSystem.particleCount; i++)
+            {
+                particles[i].remainingLifetime = 0;
+            }
+            particleSystem.SetParticles(particles);
+        }
+        foreach (ParticleSystem particleSystem in GreenTrails)
+        {
+            for (int i = 0; i < particleSystem.particleCount; i++)
+            {
+                particles[i].remainingLifetime = 0;
+            }
+            particleSystem.SetParticles(particles);
+        }
+        foreach (ParticleSystem particleSystem in BlueTrails)
+        {
+            for (int i = 0; i < particleSystem.particleCount; i++)
+            {
+                particles[i].remainingLifetime = 0;
+            }
+            particleSystem.SetParticles(particles);
+        }
+        foreach (ParticleSystem particleSystem in YellowTrails)
+        {
+            for (int i = 0; i < particleSystem.particleCount; i++)
+            {
+                particles[i].remainingLifetime = 0;
+            }
+            particleSystem.SetParticles(particles);
+        }
     }
 }

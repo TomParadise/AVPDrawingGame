@@ -30,6 +30,16 @@ public class RoundManager : MonoSingleton<RoundManager>
 
     private bool roundOver = false;
 
+    public int GetMaxRoundCount()
+    {
+        return maxRounds;
+    }
+
+    public int GetCurrentRound()
+    {
+        return roundCount;
+    }
+
     private void Start()
     {
         //set initial positions and call startRound()

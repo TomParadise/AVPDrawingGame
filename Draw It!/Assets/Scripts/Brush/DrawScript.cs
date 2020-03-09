@@ -33,7 +33,7 @@ public class DrawScript : MonoBehaviour
     {
         trail = WhiteTrails[currentWidth];
         particles = new ParticleSystem.Particle[trail.main.maxParticles];
-        paintingAudioEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Painting_events/painting");
+        paintingAudioEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Painting/painting");
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(paintingAudioEvent, playerTransform, playerRigidBody);
     }    
 

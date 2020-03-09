@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1354540631
+CRC: 3644712737
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b67d98a760daa0b68289212bbb71ac90
+    Hash: b1b2051c5ea44663eb619668af4e3212
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 5d1dff755c78bbdb753f0a6e43052e1d
+    Hash: 76e381224e96cb8453506a1f9f1349c9
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -31,8 +31,6 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 81
   Script: {instanceID: 0}
-- Class: 96
-  Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 11500000, guid: df9f338034892c44ebb62d97894772f1, type: 3}
 - Class: 114
@@ -49,6 +47,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 4f07515ada089df47868559a20dd6783, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f9a3c16d0a19b1c4d91c9f0d5eb3944a, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 143
@@ -58,9 +58,10 @@ ClassTypes:
 - Class: 199
   Script: {instanceID: 0}
 Assets:
-- Assets/Painting_Brush.prefab
-- Assets/Medium White Trail.prefab
+- Assets/Models/Painting_Brush.prefab
+- Assets/Prefabs/Medium White Trail.prefab
 - Assets/Textures/Skybox.prefab
+- Assets/Prefabs/Button.prefab
 - Assets/Oculus/VR/Prefabs/OVRPlayerController.prefab
 Dependencies:
 - D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_fbx0

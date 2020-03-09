@@ -86,6 +86,7 @@ public class DrawScript : MonoBehaviour
     //change tip colour to input colour if wanted
     private bool ChangeTrail(string _colour, bool changeTip)
     {
+        stopDrawing();
         Color newColour;
 
         switch (_colour)

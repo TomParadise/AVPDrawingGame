@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43498865, g: 0.47257948, b: 0.5106745, a: 1}
+  m_IndirectSpecularColor: {r: 0.4349879, g: 0.47257847, b: 0.5106734, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -777,7 +777,7 @@ MonoBehaviour:
   roundTimer: {fileID: 1619454588}
   cameraPos: {fileID: 53808041}
   maxRounds: 3
-  maxTimer: 5
+  maxTimer: 100
 --- !u!4 &751647581
 Transform:
   m_ObjectHideFlags: 0
@@ -1072,6 +1072,7 @@ GameObject:
   - component: {fileID: 1066491049}
   - component: {fileID: 1066491048}
   - component: {fileID: 1066491047}
+  - component: {fileID: 1066491053}
   m_Layer: 0
   m_Name: Wordbank (TMP)
   m_TagString: Untagged
@@ -1148,7 +1149,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 514
+  m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1179,7 +1180,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -83.65372, z: -67.91164, w: 0}
   m_textInfo:
     textComponent: {fileID: 1066491048}
     characterCount: 8
@@ -1275,9 +1276,23 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1.9999999}
-  m_SizeDelta: {x: 20, y: 5}
+  m_AnchoredPosition: {x: -36, y: 1.9999999}
+  m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1066491053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066491046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1001 &1114040580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1468,6 +1483,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Hand
       objectReference: {fileID: 0}
+    - target: {fileID: 7884083651438313682, guid: ca58cdc8e441125468a8be32f0a9c2cd,
+        type: 3}
+      propertyPath: brushWidthMenu
+      value: 
+      objectReference: {fileID: 1499432688}
+    - target: {fileID: 7884083651438313682, guid: ca58cdc8e441125468a8be32f0a9c2cd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2887740303572228584, guid: ca58cdc8e441125468a8be32f0a9c2cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1521,16 +1546,6 @@ PrefabInstance:
     - target: {fileID: 2887740303572228584, guid: ca58cdc8e441125468a8be32f0a9c2cd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7884083651438313682, guid: ca58cdc8e441125468a8be32f0a9c2cd,
-        type: 3}
-      propertyPath: brushWidthMenu
-      value: 
-      objectReference: {fileID: 1499432688}
-    - target: {fileID: 7884083651438313682, guid: ca58cdc8e441125468a8be32f0a9c2cd,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2270,6 +2285,7 @@ GameObject:
   - component: {fileID: 2054791233}
   - component: {fileID: 2054791232}
   - component: {fileID: 2054791231}
+  - component: {fileID: 2054791235}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2345,8 +2361,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054791230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
+  m_LocalScale: {x: 0.41239306, y: 0.41239306, z: 0.41239306}
   m_Children:
   - {fileID: 2024276325}
   m_Father: {fileID: 0}
@@ -2354,9 +2370,23 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1}
+  m_SizeDelta: {x: 387, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2054791235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054791230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1001 &703604862520349893
 PrefabInstance:
   m_ObjectHideFlags: 0

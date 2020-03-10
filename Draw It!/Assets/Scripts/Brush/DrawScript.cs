@@ -47,7 +47,7 @@ public class DrawScript : MonoBehaviour
         {
             if (drawing)
             {
-                stopDrawing();
+                StopDrawing();
             }
         }
     }
@@ -86,7 +86,7 @@ public class DrawScript : MonoBehaviour
     //change tip colour to input colour if wanted
     private bool ChangeTrail(string _colour, bool changeTip)
     {
-        stopDrawing();
+        StopDrawing();
         Color newColour;
 
         switch (_colour)
@@ -121,7 +121,7 @@ public class DrawScript : MonoBehaviour
         return true;
     }
 
-    public void stopDrawing()
+    public void StopDrawing()
     {
         trail.GetParticles(particles);
         for (int i = 0; i < trail.particleCount; i++)

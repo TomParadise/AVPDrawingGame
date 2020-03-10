@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TimerButton : MonoBehaviour
 {
+    [SerializeField] private TextMeshPro text; //the text above this button
+
     private bool spawning = true;
     private bool pressed = false;
     private float speed = 1.0f;
@@ -15,6 +18,15 @@ public class TimerButton : MonoBehaviour
         Vector3 pos = transform.position;
         pos.y -= 1.0f;
         transform.position = pos;
+
+        if (RoundManager.Instance.GetRoundOver())
+        {
+            text.text = "Press to start the next round";
+        }
+        else
+        {
+            text.text = "Choose a word and push to start";
+        }
     }
 
     // Update is called once per frame
@@ -54,13 +66,14 @@ public class TimerButton : MonoBehaviour
         {
             if (RoundManager.Instance.GetRoundOver())
             {
-                RoundManager.Instance.StartRound();
+                RoundManager.Instance.NewRound();
                 Destroy(gameObject);
             }
             else
             {
                 RoundManager.Instance.BeginCountdown();
                 pressed = true;
+                Destroy(text);
             }
         }
     }

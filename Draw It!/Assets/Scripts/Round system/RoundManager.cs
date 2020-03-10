@@ -39,7 +39,7 @@ public class RoundManager : MonoSingleton<RoundManager>
             buttonSpawnPos.y += cameraPos.localPosition.y;
         }
         wordBankSpawnPos = wordBank.transform.position;
-        StartRound();
+        NewRound();
     }
 
     // Update is called once per frame
@@ -93,7 +93,7 @@ public class RoundManager : MonoSingleton<RoundManager>
     }
 
     //initialise the start of the round
-    public void StartRound()
+    public void NewRound()
     {
         roundOver = false;
         drawScript.KillTrails();
@@ -123,7 +123,7 @@ public class RoundManager : MonoSingleton<RoundManager>
     //called on correct guess and time running out
     public void EndRound()
     {
-        drawScript.stopDrawing();
+        drawScript.StopDrawing();
         drawScript.enabled = false;
         if (roundCount == maxRounds)
         {

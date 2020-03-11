@@ -1,20 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RoundGuess : MonoSingleton<RoundGuess>
 {
-    public int score = 0;
 
-    //current round, guess right or wrong
-    public Dictionary<int, bool> roundScore;
+    public Material correct;
+    public Material wrong;
+    public Material none;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Hand")
         {
-            score++;
-
+            ChangeImage.Instance.images[RoundManager.Instance.GetCurrentRound() - 1].transform.GetChild(0).GetComponent<Image>().material = correct;
             RoundManager.Instance.EndRound();
         }
     }

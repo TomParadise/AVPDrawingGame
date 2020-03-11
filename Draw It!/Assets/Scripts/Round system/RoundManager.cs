@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class RoundManager : MonoSingleton<RoundManager>
@@ -18,6 +19,7 @@ public class RoundManager : MonoSingleton<RoundManager>
     [SerializeField] private int maxRounds = 3;//Number of rounds
     [SerializeField] private float maxTimer = 60.0f;//Amount of time each round
 
+    public Material wrong;
     private int roundCount = 0;
 
     private Vector3 buttonSpawnPos;
@@ -96,6 +98,7 @@ public class RoundManager : MonoSingleton<RoundManager>
         if (timer <= 0.0f)
         {
             mainCountdown = false;
+            ChangeImage.Instance.images[RoundManager.Instance.GetCurrentRound() - 1].transform.GetChild(0).GetComponent<Image>().material = wrong;
             EndRound();
             roundTimer.text = "";
             return;

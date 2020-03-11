@@ -96,7 +96,14 @@ public class RoundManager : MonoSingleton<RoundManager>
     void RoundCountdown()
     {
         timer -= Time.deltaTime;
-        roundTimer.text = timer.ToString("F2") + "s";
+        if (timer < 10)
+        {
+            roundTimer.text = "0" + timer.ToString("F2") + "s";
+        }
+        else
+        {
+            roundTimer.text = timer.ToString("F2") + "s";
+        }
         if (timer <= 0.0f)
         {
             mainCountdown = false;
@@ -113,7 +120,7 @@ public class RoundManager : MonoSingleton<RoundManager>
         roundTimer.text = maxTimer.ToString("F2") + "s";
         roundOver = false;
         drawScript.KillTrails();
-        Instantiate(button, buttonSpawnPos, Quaternion.identity).transform.SetParent(transform);
+        Instantiate(button, button.transform);
         timer = 3.0f;
 
         wordBank.transform.position = wordBankSpawnPos;
@@ -158,7 +165,7 @@ public class RoundManager : MonoSingleton<RoundManager>
 
     private void RoundOver()
     {
-        Instantiate(button, buttonSpawnPos, Quaternion.identity).transform.SetParent(transform);
+        Instantiate(button, button.transform);
         roundOver = true;
     }
 

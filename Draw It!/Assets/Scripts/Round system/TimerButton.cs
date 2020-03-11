@@ -6,6 +6,7 @@ using TMPro;
 
 public class TimerButton : MonoBehaviour
 {
+    [SerializeField] private TextMeshPro text; //the text above this button
     private bool spawning = true;
     private bool pressed = false;
     private float speed = 1.0f;
@@ -16,6 +17,19 @@ public class TimerButton : MonoBehaviour
     {
         Vector3 pos = transform.position;
         pos.y -= 1.0f;
+        if (RoundManager.Instance.GetRoundOver())
+        {
+            text.text = "Next round";
+            Vector3 rot = transform.eulerAngles;
+            rot.y = -90;
+            pos.x = -1;
+            pos.z = 0;
+            transform.eulerAngles = rot;
+        }
+        else
+        {
+            text.text = "Start round";
+        }
         transform.position = pos;
     }
 
@@ -62,6 +76,7 @@ public class TimerButton : MonoBehaviour
             else
             {
                 RoundManager.Instance.BeginCountdown();
+                Destroy(text);
                 pressed = true;
             }
         }

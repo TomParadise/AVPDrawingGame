@@ -24,10 +24,6 @@ public class ChangeImage : MonoSingleton<ChangeImage>
         }
     }
 
-    private void Update()
-    {
-    }
-
     public void ChangeImages()
     {
         for (int i = 0; i < images.Length; i++)

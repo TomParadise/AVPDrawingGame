@@ -14,8 +14,11 @@ public class RoundGuess : MonoSingleton<RoundGuess>
     {
         if(other.tag == "Hand")
         {
-            ChangeImage.Instance.images[RoundManager.Instance.GetCurrentRound() - 1].transform.GetChild(0).GetComponent<Image>().material = correct;
-            RoundManager.Instance.EndRound();
+            if (RoundManager.Instance.GetInRound())
+            {
+                ChangeImage.Instance.images[RoundManager.Instance.GetCurrentRound() - 1].transform.GetChild(0).GetComponent<Image>().material = correct;
+                RoundManager.Instance.EndRound();
+            }
         }
     }
 }

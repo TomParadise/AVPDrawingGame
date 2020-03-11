@@ -64,4 +64,17 @@ public class TimerButton : MonoBehaviour
             }
         }
     }
+    private void OnMouseDown()
+    {
+        if (RoundManager.Instance.GetRoundOver())
+        {
+            RoundManager.Instance.StartRound();
+            Destroy(gameObject);
+        }
+        else
+        {
+            RoundManager.Instance.BeginCountdown();
+            pressed = true;
+        }
+    }
 }

@@ -31,6 +31,7 @@ public class RoundManager : MonoSingleton<RoundManager>
     private bool mainCountdown = false;
 
     private bool roundOver = false;
+    public bool inRound = false;
 
     public int GetMaxRoundCount()
     {
@@ -80,6 +81,7 @@ public class RoundManager : MonoSingleton<RoundManager>
                 mainCountdown = true;
                 timer = maxTimer;
                 drawScript.enabled = true;
+                inRound = true;
             }
             timer -= Time.deltaTime;
         }
@@ -108,6 +110,7 @@ public class RoundManager : MonoSingleton<RoundManager>
     //initialise the start of the round
     public void StartRound()
     {
+        roundTimer.text = maxTimer.ToString("F2") + "s";
         roundOver = false;
         drawScript.KillTrails();
         Instantiate(button, buttonSpawnPos, Quaternion.identity).transform.SetParent(transform);
@@ -119,6 +122,8 @@ public class RoundManager : MonoSingleton<RoundManager>
         wordBank.transform.rotation = rot;
 
         roundCount++;
+
+        ChangeImage.Instance.ChangeImages();
     }    
 
     //begin the initial countdown and move wordbank to behind player
@@ -136,6 +141,8 @@ public class RoundManager : MonoSingleton<RoundManager>
     //called on correct guess and time running out
     public void EndRound()
     {
+        inRound = false;
+        mainCountdown = false;
         drawScript.stopDrawing();
         drawScript.enabled = false;
         if (roundCount == maxRounds)
@@ -158,5 +165,10 @@ public class RoundManager : MonoSingleton<RoundManager>
     public bool GetRoundOver()
     {
         return roundOver;
+    }
+
+    public bool GetInRound()
+    {
+        return inRound;
     }
 }

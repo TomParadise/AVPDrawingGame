@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class RoundManager : MonoSingleton<RoundManager>
-{
+{    
     [SerializeField] private GameObject button; //Button prefab to start the countdown    
     [SerializeField] private DrawScript drawScript;//Paintbrush draw script for enabling/disabling and killing trails
-    
+
     [SerializeField] private GameObject wordBank;//Wordbank for moving in front of/behind player    
     [SerializeField] private TextMeshProUGUI startTimer; //Inital countdown timer
     [SerializeField] private TextMeshPro roundTimer; //Main round timer
@@ -18,6 +19,7 @@ public class RoundManager : MonoSingleton<RoundManager>
     [SerializeField] private int maxRounds = 3;//Number of rounds
     [SerializeField] private float maxTimer = 60.0f;//Amount of time each round
 
+    public Material wrong;
     private int roundCount = 0;
 
     private Vector3 buttonSpawnPos;
@@ -29,27 +31,38 @@ public class RoundManager : MonoSingleton<RoundManager>
     private bool mainCountdown = false;
 
     private bool roundOver = false;
+    public bool inRound = false;
+
+    public int GetMaxRoundCount()
+    {
+        return maxRounds;
+    }
+
+    public int GetCurrentRound()
+    {
+        return roundCount;
+    }
 
     private void Start()
     {
         //set initial positions and call startRound()
-        buttonSpawnPos = new Vector3(1.0f, 0.75f, 0.0f);
-        if(cameraPos.localPosition.y < 0)
+        buttonSpawnPos = new Vector3(0.0f, 0.75f, 1.0f);
+        if (cameraPos.localPosition.y < 0)
         {
             buttonSpawnPos.y += cameraPos.localPosition.y;
         }
         wordBankSpawnPos = wordBank.transform.position;
-        NewRound();
+        StartRound();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(startCountdown)
+        if (startCountdown)
         {
             StartCountdown();
         }
-        else if(mainCountdown)
+        else if (mainCountdown)
         {
             RoundCountdown();
         }
@@ -57,17 +70,18 @@ public class RoundManager : MonoSingleton<RoundManager>
 
     //countdown function for start timer
     void StartCountdown()
-    {        
-        if(timer <= 0.0f)
+    {
+        if (timer <= 0.0f)
         {
             startTimer.text = "DRAW!";
-            if(timer <= -1)
+            if (timer <= -1)
             {
                 startTimer.text = "";
                 startCountdown = false;
                 mainCountdown = true;
                 timer = maxTimer;
                 drawScript.enabled = true;
+                inRound = true;
             }
             timer -= Time.deltaTime;
         }
@@ -86,6 +100,7 @@ public class RoundManager : MonoSingleton<RoundManager>
         if (timer <= 0.0f)
         {
             mainCountdown = false;
+            ChangeImage.Instance.images[RoundManager.Instance.GetCurrentRound() - 1].transform.GetChild(0).GetComponent<Image>().material = wrong;
             EndRound();
             roundTimer.text = "";
             return;
@@ -93,11 +108,12 @@ public class RoundManager : MonoSingleton<RoundManager>
     }
 
     //initialise the start of the round
-    public void NewRound()
+    public void StartRound()
     {
+        roundTimer.text = maxTimer.ToString("F2") + "s";
         roundOver = false;
         drawScript.KillTrails();
-        Instantiate(button, button.transform).transform.SetParent(transform);
+        Instantiate(button, buttonSpawnPos, Quaternion.identity).transform.SetParent(transform);
         timer = 3.0f;
 
         wordBank.transform.position = wordBankSpawnPos;
@@ -106,7 +122,9 @@ public class RoundManager : MonoSingleton<RoundManager>
         wordBank.transform.rotation = rot;
 
         roundCount++;
-    }    
+
+        ChangeImage.Instance.ChangeImages();
+    }
 
     //begin the initial countdown and move wordbank to behind player
     public void BeginCountdown()
@@ -123,6 +141,8 @@ public class RoundManager : MonoSingleton<RoundManager>
     //called on correct guess and time running out
     public void EndRound()
     {
+        inRound = false;
+        mainCountdown = false;
         drawScript.StopDrawing();
         drawScript.enabled = false;
         if (roundCount == maxRounds)
@@ -138,12 +158,17 @@ public class RoundManager : MonoSingleton<RoundManager>
 
     private void RoundOver()
     {
-        Instantiate(button, button.transform).transform.SetParent(transform);
+        Instantiate(button, buttonSpawnPos, Quaternion.identity).transform.SetParent(transform);
         roundOver = true;
     }
 
     public bool GetRoundOver()
     {
         return roundOver;
+    }
+
+    public bool GetInRound()
+    {
+        return inRound;
     }
 }

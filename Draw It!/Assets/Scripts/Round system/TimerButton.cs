@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class TimerButton : MonoBehaviour
 {
-    [SerializeField] private TextMeshPro text; //the text above this button
-
     private bool spawning = true;
     private bool pressed = false;
     private float speed = 1.0f;
@@ -18,22 +17,13 @@ public class TimerButton : MonoBehaviour
         Vector3 pos = transform.position;
         pos.y -= 1.0f;
         transform.position = pos;
-
-        if (RoundManager.Instance.GetRoundOver())
-        {
-            text.text = "Next round";
-        }
-        else
-        {
-            text.text = "Start round";
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
         //button rises on start
-        if(spawning)
+        if (spawning)
         {
             timer -= Time.deltaTime;
             Vector3 pos = transform.position;
@@ -46,13 +36,13 @@ public class TimerButton : MonoBehaviour
             }
         }
         //if button is pressed, sink into ground for set timer
-        if(pressed)
+        if (pressed)
         {
             timer -= Time.deltaTime;
             Vector3 pos = transform.position;
             pos.y -= speed * Time.deltaTime;
             transform.position = pos;
-            if(timer <= 0.0f)
+            if (timer <= 0.0f)
             {
                 Destroy(gameObject);
             }
@@ -66,15 +56,27 @@ public class TimerButton : MonoBehaviour
         {
             if (RoundManager.Instance.GetRoundOver())
             {
-                RoundManager.Instance.NewRound();
+                RoundManager.Instance.StartRound();
                 Destroy(gameObject);
             }
             else
             {
                 RoundManager.Instance.BeginCountdown();
                 pressed = true;
-                Destroy(text);
             }
+        }
+    }
+    private void OnMouseDown()
+    {
+        if (RoundManager.Instance.GetRoundOver())
+        {
+            RoundManager.Instance.StartRound();
+            Destroy(gameObject);
+        }
+        else
+        {
+            RoundManager.Instance.BeginCountdown();
+            pressed = true;
         }
     }
 }

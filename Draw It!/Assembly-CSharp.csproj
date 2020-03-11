@@ -397,6 +397,8 @@
     <Compile Include="Assets\Scripts\Brush\DrawScript.cs" />
     <Compile Include="Assets\Scripts\Brush\Width Menu\BrushWidthMenu.cs" />
     <Compile Include="Assets\Scripts\MonoSingleton.cs" />
+    <Compile Include="Assets\Scripts\Round system\ChangeImage.cs" />
+    <Compile Include="Assets\Scripts\Round system\RoundGuess.cs" />
     <Compile Include="Assets\Scripts\Round system\RoundManager.cs" />
     <Compile Include="Assets\Scripts\Round system\TimerButton.cs" />
     <Compile Include="Assets\Scripts\Word Bank\WordBank.cs" />

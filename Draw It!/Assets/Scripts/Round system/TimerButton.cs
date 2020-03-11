@@ -21,11 +21,11 @@ public class TimerButton : MonoBehaviour
 
         if (RoundManager.Instance.GetRoundOver())
         {
-            text.text = "Press to start the next round";
+            text.text = "Next round";
         }
         else
         {
-            text.text = "Choose a word and push to start";
+            text.text = "Start round";
         }
     }
 

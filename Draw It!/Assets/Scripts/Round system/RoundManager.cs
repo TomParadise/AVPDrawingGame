@@ -33,7 +33,7 @@ public class RoundManager : MonoSingleton<RoundManager>
     private void Start()
     {
         //set initial positions and call startRound()
-        buttonSpawnPos = new Vector3(0.0f, 0.75f, 1.0f);
+        buttonSpawnPos = new Vector3(1.0f, 0.75f, 0.0f);
         if(cameraPos.localPosition.y < 0)
         {
             buttonSpawnPos.y += cameraPos.localPosition.y;
@@ -97,7 +97,7 @@ public class RoundManager : MonoSingleton<RoundManager>
     {
         roundOver = false;
         drawScript.KillTrails();
-        Instantiate(button, buttonSpawnPos, Quaternion.identity).transform.SetParent(transform);
+        Instantiate(button, button.transform).transform.SetParent(transform);
         timer = 3.0f;
 
         wordBank.transform.position = wordBankSpawnPos;
@@ -138,7 +138,7 @@ public class RoundManager : MonoSingleton<RoundManager>
 
     private void RoundOver()
     {
-        Instantiate(button, buttonSpawnPos, Quaternion.identity).transform.SetParent(transform);
+        Instantiate(button, button.transform).transform.SetParent(transform);
         roundOver = true;
     }
 

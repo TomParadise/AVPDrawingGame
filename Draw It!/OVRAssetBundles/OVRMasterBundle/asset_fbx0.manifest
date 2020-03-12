@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 947428711
+CRC: 3451796754
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ad23bfd287194ed7b19612b8e688b4f7
+    Hash: 27dbcdc02639306ae3c68dd42127b6f8
   TypeTreeHash:
     serializedVersion: 2
-    Hash: f881add57992e661af442a7356112ea5
+    Hash: dc58c56b3ac91dfb9e775ce4912d68d0
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -29,19 +29,20 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 95
   Script: {instanceID: 0}
-- Class: 137
-  Script: {instanceID: 0}
 Assets:
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_grip_button_anim.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_joy_NW_anim.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_button01_anim.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_neutral_trigger_pull_mask_anim.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_joy_S_anim.fbx
-- Assets/Models/Painting_Brush.fbx
-- Assets/Models/Painting_Palette.fbx
+- Assets/Models/Forest/Painting_Brush.fbx
+- Assets/Models/Forest/Painting_Palette.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_neutral_button02_mask_anim.fbx
+- Assets/Models/Forest/Forest_Rock1.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_joy_W_anim.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Right.fbx
+- Assets/Models/Forest/Forest_Shrub3.fbx
+- Assets/Models/Forest/Forest_Tree1.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_joy_E_anim.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_button02_anim.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_neutral_button01_mask_anim.fbx
@@ -49,19 +50,16 @@ Assets:
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_joy_S_anim.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_joy_NW_anim.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_neutral_button02_mask_anim.fbx
+- Assets/Models/Forest/Forest_GrassCluster1.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_joy_W_anim.fbx
+- Assets/Models/Forest/Forest_Hill1.fbx
+- Assets/Models/Forest/Forest_Rock2.fbx
+- Assets/Models/Forest/Forest_Shrub1.fbx
+- Assets/Models/Forest/Forest_Rock3.fbx
+- Assets/Models/Forest/Forest_Shrub2.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_neutral_grip_button_mask_anim.fbx
+- Assets/Models/Forest/Forest_Hill2.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_joy_SW_anim.fbx
-- Assets/Oculus/SampleFramework/Core/TouchControllers/Models/right_touch_controller_model_skel.fbx
-- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_neutral_button01_mask_anim.fbx
-- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_joy_N_anim.fbx
-- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_joy_SE_anim.fbx
-- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_joy_SE_anim.fbx
-- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_joy_N_anim.fbx
-- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_button02_anim.fbx
-- Assets/Models/Skybox.fbx
-- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_joy_NE_anim.fbx
-- Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Left.fbx
 Dependencies:
 - D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_fbx1
 - D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_mat0

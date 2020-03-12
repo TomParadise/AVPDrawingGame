@@ -11,6 +11,7 @@ public class WordBank : MonoBehaviour
 
     private string oldText;
     private string[] dataLines;
+    public float speed = 5;
 
     private float timer = 1;
     // Start is called before the first frame update
@@ -60,6 +61,6 @@ public class WordBank : MonoBehaviour
         }
 
 
-        this.gameObject.transform.Translate(0, 5 * -Time.deltaTime, 0);
+        this.gameObject.transform.Translate(0, speed * -Time.deltaTime, 0);
     }
 }

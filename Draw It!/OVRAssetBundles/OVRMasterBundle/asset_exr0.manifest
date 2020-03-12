@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 2459514029
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b0a52f7c94df55c1d55123066fb5f45f
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1e19a299b959f5b712c049d7eedf4f33
+HashAppended: 0
+ClassTypes:
+- Class: 89
+  Script: {instanceID: 0}
+Assets:
+- Assets/Scenes/Forest/ReflectionProbe-0.exr
+Dependencies: []

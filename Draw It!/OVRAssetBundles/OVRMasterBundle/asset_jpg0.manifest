@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 2207577927
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4bd74b37271c952a77525f3796985c47
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f19fbf085e00d23fbc8d6cf7b345590b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+Assets:
+- Assets/Oculus/SampleFramework/Usage/SharedAssets/Textures/ball_billiard_03_dif.jpg
+Dependencies: []

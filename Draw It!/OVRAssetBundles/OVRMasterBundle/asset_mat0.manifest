@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2029494948
+CRC: 3948793668
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 29436a8ff1603c67dd675fab91da8266
+    Hash: db828b22f097661a3d9082db0f563da3
   TypeTreeHash:
     serializedVersion: 2
     Hash: 2164263bd948184a9373784f776f453a
@@ -16,6 +16,10 @@ ClassTypes:
 - Class: 48
   Script: {instanceID: 0}
 Assets:
+- Assets/Scripts/Round system/wrong.mat
+- Assets/Scripts/Round system/correct.mat
+- Assets/Scripts/Round system/none.mat
+- Assets/Oculus/SampleFramework/Usage/DistanceGrab/Materials/Ball03WithOutline.mat
 - Assets/Textures/Forest_SkyBox.mat
 - Assets/Oculus/SampleFramework/Usage/SharedAssets/Materials/ToyCubeMat.mat
 - Assets/Materials/PaintbrushTipMat.mat
@@ -23,4 +27,6 @@ Assets:
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/Materials/OculusTouchForQuestAndRiftS_Material.mat
 Dependencies:
 - D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_png0
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_jpg0
 - D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_tga0
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_shader0

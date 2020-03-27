@@ -123,14 +123,17 @@ public class DrawScript : MonoBehaviour
 
     public void StopDrawing()
     {
-        trail.GetParticles(particles);
-        for (int i = 0; i < trail.particleCount; i++)
+        if (trail.particleCount > 0)
         {
-            particles[i].remainingLifetime = 0.01f;
+            trail.GetParticles(particles);
+            for (int i = 0; i < trail.particleCount; i++)
+            {
+                particles[i].remainingLifetime = 0.01f;
+            }
+            trail.SetParticles(particles);
         }
-        trail.SetParticles(particles);
-        //Debug.Log("off");
-        drawing = false;
+
+        drawing = false;            
     }
 
     //loop through all particle systems and set remaining life to 0 so trails die

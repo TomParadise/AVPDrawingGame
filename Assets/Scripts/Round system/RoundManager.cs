@@ -120,7 +120,7 @@ public class RoundManager : MonoSingleton<RoundManager>
         roundTimer.text = maxTimer.ToString("F2") + "s";
         roundOver = false;
         drawScript.KillTrails();
-        Instantiate(button, button.transform);
+        Instantiate(button);
         timer = 3.0f;
 
         wordBank.transform.position = wordBankSpawnPos;

@@ -1,0 +1,6 @@
+Rock,Cactus,Prickly pear,Palm tree,Coconut,Pineapple,Stone,Brick
+Vulture,Camel,Crocodile,Scorpion,Monkey,Parrot,Jackal,Anubis,Sphinx,Ra,Snake,Scarab beetle
+Pyramid,Tomb,Mummy,Sarcophagus,Egyptian,Temple,Trap,Puzzle,Hieroglyph,Skeleton
+Mirage,Oasis,The Nile,River,Lake,Sand dune,Tumbleweed,Water,The Sea,Sun,Heat
+Cowboy,Aladdin,Genie,Lamp,Carpet,Saloon,Stand-off,Pistol,Holster,Cowboy hat,Boots
+Hammer,Chisel,Scepter,Gold,Money,Coins,Wealth,Pharaoh,Emperor,Prince

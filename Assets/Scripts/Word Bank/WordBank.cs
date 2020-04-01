@@ -6,7 +6,7 @@ using System.Linq;
 
 public class WordBank : MonoSingleton<WordBank>
 {
-    private int maxNumbers = 8;
+    private int maxNumbers = 16;
     private List<int> uniqueNumbers;
     private List<int> finishedList;
 
@@ -16,7 +16,6 @@ public class WordBank : MonoSingleton<WordBank>
 
     private string oldText;
     private List<string> dataLines;
-    private string[] words;
 
     // Start is called before the first frame update
     void Start()
@@ -25,29 +24,31 @@ public class WordBank : MonoSingleton<WordBank>
 
     private void SetText()
     {
-        for (int i = 0; i < 2; i++)
+        List<string> words;
+        uniqueNumbers = new List<int>();
+        finishedList = new List<int>();
+        GenerateRandomList();
+
+        int random = Random.Range(0, dataLines.Count);
+        words = dataLines[random].Split(',').ToList();
+        dataLines.Remove(dataLines[random]);
+
+        random = Random.Range(0, dataLines.Count);
+        words.AddRange(dataLines[random].Split(','));
+        dataLines.Remove(dataLines[random]);
+
+        int j = 0;
+        for (int k = 0; k < 16; k++)
         {
-            uniqueNumbers = new List<int>();
-            finishedList = new List<int>();
-            GenerateRandomList();
+            Text[j].text += words[finishedList[k]];
 
-            int random = Random.Range(0, dataLines.Count);
-            words = dataLines[random].Split(',');
-            dataLines.Remove(dataLines[random]);
-
-            int j = 0;
-            for (int k = 0; k < 8; k++)
+            Text[j].text += "\n";
+            j++;
+            if (j > 3)
             {
-                Text[j].text += words[finishedList[k]];
-
-                Text[j].text += "\n";
-                j++;
-                if (j > 3)
-                {
-                    j = 0;
-                }
+                j = 0;
             }
-        }
+        }     
     }
 
     private void GenerateRandomList()

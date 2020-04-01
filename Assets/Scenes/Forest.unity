@@ -6768,7 +6768,7 @@ MonoBehaviour:
   - {fileID: 505057173}
   - {fileID: 126761488}
   - {fileID: 1756451367}
-  wordBank: {fileID: 4900000, guid: faccafe23c51cd14598689c7df22f400, type: 3}
+  wordBank: {fileID: 4900000, guid: b92ac4f122d935b41bdac66de090aa32, type: 3}
 --- !u!1001 &1419476340
 PrefabInstance:
   m_ObjectHideFlags: 0

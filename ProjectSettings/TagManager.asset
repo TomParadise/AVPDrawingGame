@@ -7,6 +7,8 @@ TagManager:
   - Colour
   - Width Button
   - Hand
+  - VRMainCamera
+  - Canvas
   layers:
   - Default
   - TransparentFX

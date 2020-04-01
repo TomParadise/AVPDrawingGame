@@ -166,7 +166,7 @@ public class RoundManager : MonoSingleton<RoundManager>
 
     private void RoundOver()
     {
-        Instantiate(button, button.transform);
+        Instantiate(button);
         roundOver = true;
     }
 

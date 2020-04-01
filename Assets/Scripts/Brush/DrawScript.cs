@@ -123,6 +123,10 @@ public class DrawScript : MonoBehaviour
 
     public void StopDrawing()
     {
+        if(!trail)
+        {
+            return;
+        }
         if (trail.particleCount > 0)
         {
             trail.GetParticles(particles);

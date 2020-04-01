@@ -131,6 +131,7 @@ public class RoundManager : MonoSingleton<RoundManager>
         roundCount++;
 
         ChangeImage.Instance.ChangeImages();
+        WordBank.Instance.ResetText();
     }
 
     //begin the initial countdown and move wordbank to behind player

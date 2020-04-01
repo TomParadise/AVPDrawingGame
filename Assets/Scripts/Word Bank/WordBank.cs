@@ -2,65 +2,76 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
-public class WordBank : MonoBehaviour
+public class WordBank : MonoSingleton<WordBank>
 {
-    public TextMeshPro Text;
+    private int maxNumbers = 8;
+    private List<int> uniqueNumbers;
+    private List<int> finishedList;
 
-    public TextAsset wordBank;
+    [SerializeField] private TextMeshPro[] Text;
+
+    [SerializeField] private TextAsset wordBank;
 
     private string oldText;
-    private string[] dataLines;
-    public float speed = 5;
+    private List<string> dataLines;
+    private string[] words;
 
-    private float timer = 1;
     // Start is called before the first frame update
     void Start()
     {
-        dataLines = wordBank.text.Split('\n');
+    }
 
-
-
-        for (int x = 1; x < 60; x++)
+    private void SetText()
+    {
+        for (int i = 0; i < 2; i++)
         {
+            uniqueNumbers = new List<int>();
+            finishedList = new List<int>();
+            GenerateRandomList();
 
-            timer = 1.0f;
-            int i = Random.Range(0, 850);
+            int random = Random.Range(0, dataLines.Count);
+            words = dataLines[random].Split(',');
+            dataLines.Remove(dataLines[random]);
 
-
-            Text.text = dataLines[i] + oldText;
-
-            if (Text != null)
+            int j = 0;
+            for (int k = 0; k < 8; k++)
             {
-               if(x%2 == 0)
-                {
-                    oldText = "\n" + Text.text;
-                }
+                Text[j].text += words[finishedList[k]];
 
-               else
+                Text[j].text += "\n";
+                j++;
+                if (j > 3)
                 {
-                    oldText = "\t" + "\t" + "\t" + Text.text;
+                    j = 0;
                 }
             }
-
-
-
-            //Text.text = dataLines[i];
-            //Debug.Log(dataLines[i]);
-            //Text.text = "Enter Your Text Here";
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void GenerateRandomList()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0.0f)
+        for (int i = 0; i < maxNumbers; i++)
         {
-
+            uniqueNumbers.Add(i);
         }
+        for (int i = 0; i < maxNumbers; i++)
+        {
+            int ranNum = uniqueNumbers[Random.Range(0, uniqueNumbers.Count)];
+            finishedList.Add(ranNum);
+            uniqueNumbers.Remove(ranNum);
+        }
+    }
 
+    public void ResetText()
+    {
+        for (int i = 0; i < Text.Length; i++)
+        {
+            Text[i].text = "";
+        }
+        dataLines = wordBank.text.Split('\n').ToList();
 
-        this.gameObject.transform.Translate(0, speed * -Time.deltaTime, 0);
+        SetText();
     }
 }

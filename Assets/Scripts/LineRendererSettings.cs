@@ -31,7 +31,7 @@ public class LineRendererSettings : MonoBehaviour
         points[0] = Vector3.zero;
 
         //Set the end point 20 units away from the GO on the Z axis (pointing forward)
-        points[1] = transform.position + new Vector3(0, 0, 20);
+        points[1] = transform.position + new Vector3(0, 0, 7.5f);
 
         //Finally set the positions array on the LineRenderer to our new values
         rend.SetPositions(points);
@@ -49,17 +49,17 @@ public class LineRendererSettings : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, layerMask))
         {
-            points[1] = transform.forward + new Vector3(0, 0, hit.distance);
-            rend.startColor = Color.red;
-            rend.endColor = Color.red;
+            points[1] = transform.InverseTransformPoint(hit.point);
+            rend.startColor = Color.green;
+            rend.endColor = Color.green;
             btn = hit.collider.gameObject.GetComponent<Button>();
             hitBtn = true; 
         }
         else
         {
-            points[1] = transform.forward + new Vector3(0, 0, 20);
-            rend.startColor = Color.green;
-            rend.endColor = Color.green;
+            points[1] = transform.forward + new Vector3(0, 0, 7.5f);
+            rend.startColor = Color.white;
+            rend.endColor = Color.white;
             hitBtn = false;
         }
 
@@ -71,7 +71,7 @@ public class LineRendererSettings : MonoBehaviour
     void Update()
     {
         AlignLineRenderer(rend);
-        if (AlignLineRenderer(rend) && Input.GetAxis("Submit") > 0)
+        if (AlignLineRenderer(rend) && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) != 0)
         {
             btn.onClick.Invoke();
         }

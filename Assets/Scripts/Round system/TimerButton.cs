@@ -77,6 +77,8 @@ public class TimerButton : MonoBehaviour
             {
                 RoundManager.Instance.BeginCountdown();
                 Destroy(text);
+
+                Destroy(transform.GetChild(0).GetComponent<OffscreenIndicator>());
                 pressed = true;
             }
         }

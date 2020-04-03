@@ -87,4 +87,9 @@ public class OffscreenIndicator : MonoBehaviour
         returnVector /= max;
         return returnVector;
     }
+
+    private void OnDestroy()
+    {
+        Destroy(indicator.gameObject);
+    }
 }

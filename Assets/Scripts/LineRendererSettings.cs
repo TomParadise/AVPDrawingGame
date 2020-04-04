@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LineRendererSettings : MonoBehaviour
 {
@@ -81,18 +82,28 @@ public class LineRendererSettings : MonoBehaviour
     {
         if (btn != null)
         {
-            if (btn.name == "red_btn")
+            if (btn.name == "play_btn")
             {
                 img.color = Color.red;
             }
-            else if (btn.name == "blue_btn")
+            else if (btn.name == "options_btn")
             {
                 img.color = Color.blue;
             }
-            else if (btn.name == "green_btn")
+            else if (btn.name == "quit_btn")
             {
                 img.color = Color.green;
             }
         }
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }

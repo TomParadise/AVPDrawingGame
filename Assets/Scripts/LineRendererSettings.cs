@@ -16,6 +16,7 @@ public class LineRendererSettings : MonoBehaviour
     public GameObject panel;
     public Image img;
     public Button btn;
+    public bool pause;
 
     //Start is called before the first frame update
     void Start()
@@ -75,25 +76,6 @@ public class LineRendererSettings : MonoBehaviour
         if (AlignLineRenderer(rend) && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) != 0)
         {
             btn.onClick.Invoke();
-        }
-    }
-
-    public void ColorChangeOnClick()
-    {
-        if (btn != null)
-        {
-            if (btn.name == "play_btn")
-            {
-                img.color = Color.red;
-            }
-            else if (btn.name == "options_btn")
-            {
-                img.color = Color.blue;
-            }
-            else if (btn.name == "quit_btn")
-            {
-                img.color = Color.green;
-            }
         }
     }
 

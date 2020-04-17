@@ -18,6 +18,8 @@ public class LineRendererSettings : MonoBehaviour
     public Button btn;
     public bool pause;
 
+    private bool canPress = false;
+
     //Start is called before the first frame update
     void Start()
     {
@@ -79,9 +81,14 @@ public class LineRendererSettings : MonoBehaviour
     void Update()
     {
         AlignLineRenderer(rend);
-        if (AlignLineRenderer(rend) && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) != 0)
+        if (AlignLineRenderer(rend) && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) != 0 && !canPress)
         {
+            canPress = true;
             btn.onClick.Invoke();
+        }
+        if(OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) == 0)
+        {
+            canPress = false;
         }
     }
 

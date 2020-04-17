@@ -33,7 +33,7 @@ public class LineRendererSettings : MonoBehaviour
         points[0] = Vector3.zero;
 
         //Set the end point 20 units away from the GO on the Z axis (pointing forward)
-        points[1] = transform.position + new Vector3(0, 0, 7.5f);
+        points[1] = transform.position + transform.forward * 7.5f;
 
         //Finally set the positions array on the LineRenderer to our new values
         rend.SetPositions(points);
@@ -46,23 +46,29 @@ public class LineRendererSettings : MonoBehaviour
         Ray ray;
         ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
-        Debug.DrawRay(ray.origin, ray.direction);
+        //Debug.DrawRay(ray.origin, ray.direction);
         bool hitBtn = false;
 
         if (Physics.Raycast(ray, out hit, layerMask))
         {
-            points[1] = transform.InverseTransformPoint(hit.point);
-            rend.startColor = Color.green;
-            rend.endColor = Color.green;
-            btn = hit.collider.gameObject.GetComponent<Button>();
-            hitBtn = true; 
+            points[1] = transform.worldToLocalMatrix.MultiplyVector(transform.forward * hit.distance);
+            if(hit.collider.gameObject.tag == "Button")
+            {
+                rend.startColor = Color.green;
+                rend.endColor = Color.green;
+                btn = hit.collider.gameObject.GetComponent<Button>();
+                hitBtn = true;
+            }
+            else
+            {
+                rend.startColor = Color.white;
+                rend.endColor = Color.white;
+                hitBtn = false;
+            }
         }
         else
         {
-            points[1] = transform.forward + new Vector3(0, 0, 7.5f);
-            rend.startColor = Color.white;
-            rend.endColor = Color.white;
-            hitBtn = false;
+            points[1] = Vector3.zero;
         }
 
         rend.SetPositions(points);

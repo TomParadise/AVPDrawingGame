@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 95857868}
   m_Layer: 5
   m_Name: back_btn
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,7 +311,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 33, z: 0.1}
+  m_Size: {x: 500, y: 100, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &95857869
 MonoBehaviour:
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 164758164}
   m_Layer: 5
   m_Name: No_btn
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -469,7 +469,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 33, z: 0.1}
+  m_Size: {x: 500, y: 100, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &164758165
 MonoBehaviour:
@@ -526,7 +526,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 262579881}
-        m_MethodName: 
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 226505208}
   - component: {fileID: 226505207}
   - component: {fileID: 226505206}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,7 +693,7 @@ GameObject:
   - component: {fileID: 230843862}
   m_Layer: 5
   m_Name: online_btn
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -729,7 +729,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 33, z: 0.1}
+  m_Size: {x: 500, y: 100, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &230843863
 MonoBehaviour:
@@ -836,7 +836,7 @@ GameObject:
   - component: {fileID: 262579882}
   - component: {fileID: 262579884}
   - component: {fileID: 262579883}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -915,7 +915,7 @@ GameObject:
   - component: {fileID: 415929181}
   - component: {fileID: 415929180}
   - component: {fileID: 415929179}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -989,7 +989,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415929178}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 3.5, z: -1.5}
+  m_LocalPosition: {x: 0, y: 2.018, z: -1.5}
   m_LocalScale: {x: 5, y: 3, z: 0.2}
   m_Children:
   - {fileID: 226505205}
@@ -1063,10 +1063,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 01ac879f6ce09924e9c26663f798beaf, type: 2}
-    - target: {fileID: 3300000, guid: 37ba10a26a648144fa2390c8adfb2c8a, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 37ba10a26a648144fa2390c8adfb2c8a, type: 3}
     - target: {fileID: 9500000, guid: 37ba10a26a648144fa2390c8adfb2c8a, type: 3}
       propertyPath: m_Controller
       value: 
@@ -1075,6 +1071,10 @@ PrefabInstance:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: eb8e07cd3e0ce494f81482c6835d2b10, type: 3}
+    - target: {fileID: 3300000, guid: 37ba10a26a648144fa2390c8adfb2c8a, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 37ba10a26a648144fa2390c8adfb2c8a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37ba10a26a648144fa2390c8adfb2c8a, type: 3}
 --- !u!1 &565677242
@@ -1171,7 +1171,7 @@ GameObject:
   - component: {fileID: 598743757}
   m_Layer: 5
   m_Name: Quit_btn
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1207,7 +1207,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 33, z: 0.1}
+  m_Size: {x: 500, y: 100, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &598743758
 MonoBehaviour:
@@ -1413,7 +1413,7 @@ GameObject:
   - component: {fileID: 609865184}
   m_Layer: 5
   m_Name: Options_btn
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1449,7 +1449,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 33, z: 0.1}
+  m_Size: {x: 500, y: 100, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &609865185
 MonoBehaviour:
@@ -1571,7 +1571,7 @@ GameObject:
   - component: {fileID: 721582528}
   m_Layer: 5
   m_Name: Yes_btn
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1607,7 +1607,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 33, z: 0.1}
+  m_Size: {x: 500, y: 100, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &721582529
 MonoBehaviour:
@@ -1859,7 +1859,7 @@ GameObject:
   - component: {fileID: 794051553}
   - component: {fileID: 794051555}
   - component: {fileID: 794051554}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Exit Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2026,7 +2026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.132
+      value: -3.538
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2284,7 +2284,7 @@ GameObject:
   - component: {fileID: 1117376658}
   m_Layer: 5
   m_Name: Exit Game
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2320,7 +2320,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 33, z: 0.1}
+  m_Size: {x: 500, y: 100, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1117376659
 MonoBehaviour:
@@ -2416,7 +2416,7 @@ GameObject:
   - component: {fileID: 1126151889}
   - component: {fileID: 1126151891}
   - component: {fileID: 1126151890}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Play Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2498,7 +2498,7 @@ GameObject:
   - component: {fileID: 1141863850}
   m_Layer: 5
   m_Name: option1_btn
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2534,7 +2534,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 33, z: 0.1}
+  m_Size: {x: 500, y: 100, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1141863851
 MonoBehaviour:
@@ -2645,7 +2645,7 @@ GameObject:
   - component: {fileID: 1148981967}
   m_Layer: 5
   m_Name: play_btn
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2681,7 +2681,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 33, z: 0.1}
+  m_Size: {x: 500, y: 100, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1148981968
 MonoBehaviour:
@@ -2958,7 +2958,7 @@ GameObject:
   - component: {fileID: 1320605374}
   - component: {fileID: 1320605376}
   - component: {fileID: 1320605375}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Options Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3040,7 +3040,7 @@ GameObject:
   - component: {fileID: 1342903842}
   m_Layer: 5
   m_Name: party_btn
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3076,7 +3076,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 33, z: 0.1}
+  m_Size: {x: 500, y: 100, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1342903843
 MonoBehaviour:
@@ -3490,10 +3490,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3300000, guid: 32fbc8bcebb64584da5868aeeb086cda, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: ca20b3907ff1c794cb89c1ad2cce8282, type: 3}
     - target: {fileID: 9500000, guid: 32fbc8bcebb64584da5868aeeb086cda, type: 3}
       propertyPath: m_Controller
       value: 
@@ -3502,6 +3498,10 @@ PrefabInstance:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: 1ae9aefe37a62de429ddc2edd1ca36f3, type: 3}
+    - target: {fileID: 3300000, guid: 32fbc8bcebb64584da5868aeeb086cda, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: ca20b3907ff1c794cb89c1ad2cce8282, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32fbc8bcebb64584da5868aeeb086cda, type: 3}
 --- !u!1 &1577486954
@@ -3756,7 +3756,7 @@ GameObject:
   - component: {fileID: 1672527818}
   m_Layer: 5
   m_Name: option2_btn
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3792,7 +3792,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 33, z: 0.1}
+  m_Size: {x: 500, y: 100, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1672527819
 MonoBehaviour:
@@ -4337,7 +4337,7 @@ GameObject:
   - component: {fileID: 2136211225}
   m_Layer: 5
   m_Name: back_btn
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4373,7 +4373,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 33, z: 0.1}
+  m_Size: {x: 500, y: 100, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2136211226
 MonoBehaviour:

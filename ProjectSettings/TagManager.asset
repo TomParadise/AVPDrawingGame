@@ -9,6 +9,7 @@ TagManager:
   - Hand
   - VRMainCamera
   - Canvas
+  - Button
   layers:
   - Default
   - TransparentFX

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.01.10.00">
-    <object class="AudioFile" id="{c9af44cb-2877-41b5-9b69-c555d63e553d}">
+    <object class="AudioFile" id="{77e4b980-b9f0-4194-8b58-d903bb619e52}">
         <property name="assetPath">
-            <value>Misc gameplay/8bit_status_point_2.mp3</value>
+            <value>Button/Button1 - Trimmed (4).wav</value>
         </property>
         <property name="frequencyInKHz">
             <value>44.0999985</value>
         </property>
         <property name="channelCount">
-            <value>2</value>
+            <value>1</value>
         </property>
         <property name="length">
-            <value>1.0187755102040816</value>
+            <value>0.16444444444444445</value>
         </property>
         <relationship name="masterAssetFolder">
             <destination>{02b0569e-898f-40d9-b3c8-53ac984f9d9d}</destination>

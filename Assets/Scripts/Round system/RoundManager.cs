@@ -23,7 +23,6 @@ public class RoundManager : MonoSingleton<RoundManager>
     private int roundCount = 0;
 
     private Vector3 buttonSpawnPos;
-    private Vector3 wordBankSpawnPos;
 
     private float timer = 3.0f;
 
@@ -32,6 +31,9 @@ public class RoundManager : MonoSingleton<RoundManager>
 
     private bool roundOver = false;
     public bool inRound = false;
+
+    [FMODUnity.EventRef]
+    FMOD.Studio.EventInstance music;
 
     public int GetMaxRoundCount()
     {
@@ -43,15 +45,22 @@ public class RoundManager : MonoSingleton<RoundManager>
         return roundCount;
     }
 
+    new private void OnDestroy()
+    {
+        music.release();
+        music.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
     private void Start()
     {
+        music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/forest");
+        music.start();
         //set initial positions and call startRound()
         buttonSpawnPos = new Vector3(0.0f, 0.75f, 1.0f);
         if (cameraPos.localPosition.y < 0)
         {
             buttonSpawnPos.y += cameraPos.localPosition.y;
         }
-        wordBankSpawnPos = wordBank.transform.position;
         StartRound();
     }
 
@@ -123,7 +132,7 @@ public class RoundManager : MonoSingleton<RoundManager>
         Instantiate(button);
         timer = 3.0f;
 
-        wordBank.transform.position = wordBankSpawnPos;
+        wordBank.gameObject.SetActive(true);
         Quaternion rot = wordBank.transform.rotation;
         rot.y = 0;
         wordBank.transform.rotation = rot;
@@ -139,7 +148,7 @@ public class RoundManager : MonoSingleton<RoundManager>
     {
         startCountdown = true;
 
-        wordBank.transform.position = new Vector3(wordBankSpawnPos.x, wordBankSpawnPos.y, -10);
+        wordBank.gameObject.SetActive(false);
         Quaternion rot = wordBank.transform.rotation;
         rot.y = 180;
         wordBank.transform.rotation = rot;

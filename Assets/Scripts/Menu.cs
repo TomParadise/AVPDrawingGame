@@ -15,19 +15,19 @@ public class Menu : MonoBehaviour
 
     //Declare a panel to change.
     public GameObject panel;
-    public Button one;
-    public Button two;
-    public Button three;
-    public Button four;
-    public Button five;
+    public Image one;
+    public Image two;
+    public Image three;
+    public Image four;
+    public Image five;
     public GameObject round;
     public GameObject time;
     Image img;
     Button btn;
     bool pause;
     float volume = 0;
-    float rounds = 0;
-    float timer = 0;
+    int rounds = 1;
+    int timer = 2;
     float i = 0;
     public AudioMixer mixer;
 
@@ -94,12 +94,6 @@ public class Menu : MonoBehaviour
 
     void Update()
     {
-        ColorBlock onecb = one.colors;
-        ColorBlock twocb = two.colors;
-        ColorBlock threecb = three.colors;
-        ColorBlock fourcb = four.colors;
-        ColorBlock fivecb = five.colors;
-
         AlignLineRenderer(rend);
         if (AlignLineRenderer(rend) && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) != 0 && !canPress)
         {
@@ -120,80 +114,32 @@ public class Menu : MonoBehaviour
         }
         if (volume >= -80)
         {
-            onecb.normalColor = Color.grey;
-            one.colors = onecb;
+            one.GetComponent<Image>().color = Color.grey;
         }
         if (volume >= -60)
         {
-            onecb.normalColor = Color.white;
-            one.colors = onecb;
-            twocb.normalColor = Color.grey;
-            two.colors = twocb;
+            one.GetComponent<Image>().color = Color.white;
+            two.GetComponent<Image>().color = Color.grey;
         }
         if (volume >= -40)
         {
-            twocb.normalColor = Color.white;
-            two.colors = twocb;
-            threecb.normalColor = Color.grey;
-            three.colors = threecb;
+            two.GetComponent<Image>().color = Color.white;
+            three.GetComponent<Image>().color = Color.grey;
         }
         if (volume >= -20)
         {
-            threecb.normalColor = Color.white;
-            three.colors = threecb;
-            fourcb.normalColor = Color.grey;
-            four.colors = fourcb;
+            three.GetComponent<Image>().color = Color.white;
+            four.GetComponent<Image>().color = Color.grey;
         }
         if (volume >= 0)
         {
-            fourcb.normalColor = Color.white;
-            four.colors = fourcb;
-            fivecb.normalColor = Color.grey;
-            five.colors = fivecb;
+            four.GetComponent<Image>().color = Color.white;
+            five.GetComponent<Image>().color = Color.grey;
         }       
         if (volume >= 20)
         {
-            fivecb.normalColor = Color.white;
-            five.colors = fivecb;
-        }
-        switch(rounds)
-        {
-            case 0:
-                round.GetComponent<Text>().text = "1";
-                break;
-            case 1:
-                round.GetComponent<Text>().text = "2";
-                break;
-            case 2:
-                round.GetComponent<Text>().text = "3";
-                break;
-            case 3:
-                round.GetComponent<Text>().text = "4";
-                break;
-            case 4:
-                round.GetComponent<Text>().text = "5";
-                break;
-            default:
-                round.GetComponent<Text>().text = "1";
-                break;
-
-        }
-        switch (timer)
-        {
-            case 0:
-                time.GetComponent<Text>().text = "30s";
-                break;
-            case 1:
-                round.GetComponent<Text>().text = "45s";
-                break;
-            case 2:
-                round.GetComponent<Text>().text = "60s";
-                break;
-            default:
-                round.GetComponent<Text>().text = "30s";
-                break;
-
-        }
+            five.GetComponent<Image>().color = Color.white;
+        }        
     }
 
     public void ExitGame()
@@ -203,6 +149,9 @@ public class Menu : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        PlayerPrefs.SetInt("maxTimer", (timer * 20));
+        PlayerPrefs.SetInt("maxRounds", rounds);
+        PlayerPrefs.SetFloat("MusicVolume", volume);
         SceneManager.LoadScene(sceneName);
     }
 
@@ -213,8 +162,6 @@ public class Menu : MonoBehaviour
             i++;
             volume = i * 20;
             mixer.SetFloat("MusicVol", (volume));
-            PlayerPrefs.SetFloat("MusicVolume", volume);
-            Debug.Log(volume);
         }
     }
 
@@ -225,45 +172,43 @@ public class Menu : MonoBehaviour
             i--;
             volume = i * 20;
             mixer.SetFloat("MusicVol", (volume));
-            PlayerPrefs.SetFloat("MusicVolume", volume);
-            Debug.Log(volume);
         }
     }
 
     public void RoundCUp()
     {
-        if (rounds < 4)
+        if (rounds < 5)
         {
             rounds++;
-            PlayerPrefs.SetFloat("maxRounds", rounds);
+
+            round.GetComponent<Text>().text = rounds.ToString();
         }
-        
     }
 
     public void RoundCDown()
     {
-        if(rounds > 0)
+        if(rounds > 1)
         {
             rounds--;
-            PlayerPrefs.SetFloat("maxRounds", rounds);
+            round.GetComponent<Text>().text = rounds.ToString();
         }
     }
 
     public void RoundTUp()
     {
-        if (rounds < 2)
+        if (timer < 3)
         {
-            rounds++;
-            PlayerPrefs.SetFloat("maxTimer", rounds);
+            timer++;  
+            time.GetComponent<Text>().text = (timer*20).ToString()+"s";
         }
     }
 
     public void RoundTDown()
     {
-        if (timer > 0)
+        if (timer > 1)
         {
             timer--;
-            PlayerPrefs.SetFloat("maxTimer", rounds);
+            time.GetComponent<Text>().text = (timer * 20).ToString() + "s";
         }
     }
 }

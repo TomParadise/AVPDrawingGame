@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{ba8306bb-85cd-44eb-bd49-8f743289f36d}">
+        <property name="assetPath">
+            <value>painting sounds/painting.mp3</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>18.808163265306124</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{02b0569e-898f-40d9-b3c8-53ac984f9d9d}</destination>
+        </relationship>
+    </object>
+</objects>

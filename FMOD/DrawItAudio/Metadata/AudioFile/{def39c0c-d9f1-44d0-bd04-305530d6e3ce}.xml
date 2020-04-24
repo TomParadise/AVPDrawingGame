@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{def39c0c-d9f1-44d0-bd04-305530d6e3ce}">
+		<property name="assetPath">
+			<value>Colour change sounds/FOLEY MUD FAST SUCTION 01.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.47020408163265304</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{67f376c2-5c91-4755-ae89-bcf1a243a73e}</destination>
+		</relationship>
+	</object>
+</objects>

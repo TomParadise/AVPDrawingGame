@@ -15,27 +15,41 @@ public class Menu : MonoBehaviour
 
     //Declare a panel to change.
     public GameObject panel;
-    public Image one;
-    public Image two;
-    public Image three;
-    public Image four;
-    public Image five;
+    public Image[] volumeIndicator;
     public GameObject round;
     public GameObject time;
     Image img;
     Button btn;
     bool pause;
-    float volume = 0;
-    int rounds = 1;
+    float volume = 0.6f;
+    int rounds = 3;
     int timer = 2;
     float i = 0;
     public AudioMixer mixer;
 
     private bool canPress = false;
 
+    FMOD.Studio.Bus Master;
+    FMOD.Studio.Bus Music;
+    FMOD.Studio.Bus SFX;
+
+    [FMODUnity.EventRef]
+    FMOD.Studio.EventInstance music;
+
     //Start is called before the first frame update
     void Start()
     {
+        //menu music
+        music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/forest");
+        music.start();
+
+        //Set FMOD buses
+        Master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+        Music = FMODUnity.RuntimeManager.GetBus("bus:/Master/Music");
+        SFX = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
+
+        Master.setVolume(volume);
+
         img = panel.GetComponent<Image>();
 
         //Get the LineRenderer attached to the GameObject. 
@@ -97,7 +111,7 @@ public class Menu : MonoBehaviour
         AlignLineRenderer(rend);
         if (AlignLineRenderer(rend) && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) != 0 && !canPress)
         {
-            if (btn.name == "party_btn" || btn.name == "online_btn")
+            if (btn.name == "lvl1_btn")
             {
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Menu/menu_play");
             }
@@ -111,35 +125,7 @@ public class Menu : MonoBehaviour
         if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) == 0)
         {
             canPress = false;
-        }
-        if (volume >= -80)
-        {
-            one.GetComponent<Image>().color = Color.grey;
-        }
-        if (volume >= -60)
-        {
-            one.GetComponent<Image>().color = Color.white;
-            two.GetComponent<Image>().color = Color.grey;
-        }
-        if (volume >= -40)
-        {
-            two.GetComponent<Image>().color = Color.white;
-            three.GetComponent<Image>().color = Color.grey;
-        }
-        if (volume >= -20)
-        {
-            three.GetComponent<Image>().color = Color.white;
-            four.GetComponent<Image>().color = Color.grey;
-        }
-        if (volume >= 0)
-        {
-            four.GetComponent<Image>().color = Color.white;
-            five.GetComponent<Image>().color = Color.grey;
-        }       
-        if (volume >= 20)
-        {
-            five.GetComponent<Image>().color = Color.white;
-        }        
+        }      
     }
 
     public void ExitGame()
@@ -152,27 +138,53 @@ public class Menu : MonoBehaviour
         PlayerPrefs.SetInt("maxTimer", (timer * 20));
         PlayerPrefs.SetInt("maxRounds", rounds);
         PlayerPrefs.SetFloat("MusicVolume", volume);
+
+        music.release();
+        music.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
         SceneManager.LoadScene(sceneName);
     }
 
     public void VolumeUp()
     {
-        if (volume <20)
+        if (volume < 0.9f)
         {
-            i++;
-            volume = i * 20;
-            mixer.SetFloat("MusicVol", (volume));
+            volume += 0.2f;
+            for(int i = 0; i < volumeIndicator.Length; i++)
+            {
+                if ((i + 1) * 0.2f <= volume+0.1)
+                {
+                    volumeIndicator[i].GetComponent<Image>().color = Color.white;
+                }
+                else
+                {
+                    volumeIndicator[i].GetComponent<Image>().color = Color.grey;
+                }
+            }
         }
+        Master.setVolume(volume);
+        //mixer.SetFloat("MusicVol", (volume));
     }
 
     public void VolumeDown()
-    {   
-        if (volume > -80)
+    {
+        if (volume > 0.1f)
         {
-            i--;
-            volume = i * 20;
-            mixer.SetFloat("MusicVol", (volume));
+            volume -= 0.2f;
+            for (int i = 0; i < volumeIndicator.Length; i++)
+            {
+                if ((i + 1) * 0.2f <= volume)
+                {
+                    volumeIndicator[i].GetComponent<Image>().color = Color.white;
+                }
+                else
+                {
+                    volumeIndicator[i].GetComponent<Image>().color = Color.grey;
+                }
+            }
         }
+        Master.setVolume(volume);
+        //mixer.SetFloat("MusicVol", (volume));
     }
 
     public void RoundCUp()

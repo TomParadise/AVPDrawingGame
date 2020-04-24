@@ -140,11 +140,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
   panel: {fileID: 262579881}
-  one: {fileID: 1375088114}
-  two: {fileID: 1563180713}
-  three: {fileID: 139777621}
-  four: {fileID: 1457602037}
-  five: {fileID: 2142900177}
+  volumeIndicator:
+  - {fileID: 1375088114}
+  - {fileID: 1563180713}
+  - {fileID: 139777621}
+  - {fileID: 1457602037}
+  - {fileID: 2142900177}
   round: {fileID: 773471968}
   time: {fileID: 680869770}
   mixer: {fileID: 24100000, guid: 1dd706bb85d8aef4e83a6229dbd62c36, type: 2}
@@ -889,7 +890,7 @@ GameObject:
   - component: {fileID: 139777620}
   m_Layer: 5
   m_Name: volume_3
-  m_TagString: Button
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1494,7 +1495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &262579882
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3314,7 +3315,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 2
 --- !u!222 &773471971
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5098,7 +5099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1320605374
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5563,7 +5564,7 @@ GameObject:
   - component: {fileID: 1375088113}
   m_Layer: 5
   m_Name: volume_1
-  m_TagString: Button
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5750,7 +5751,7 @@ GameObject:
   - component: {fileID: 1457602036}
   m_Layer: 5
   m_Name: volume_4
-  m_TagString: Button
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5801,7 +5802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.48235294, g: 0.48235294, b: 0.48235294, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5992,7 +5993,7 @@ GameObject:
   - component: {fileID: 1563180712}
   m_Layer: 5
   m_Name: volume_2
-  m_TagString: Button
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8052,7 +8053,7 @@ GameObject:
   - component: {fileID: 2142900178}
   m_Layer: 5
   m_Name: volume_5
-  m_TagString: Button
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8070,7 +8071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.48235294, g: 0.48235294, b: 0.48235294, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

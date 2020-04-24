@@ -26,7 +26,6 @@ public class DrawScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Music/Calm", transform.position);
         //set current colour to white and width to normal
         trail = WhiteTrails[currentWidth];
         particles = new ParticleSystem.Particle[trail.main.maxParticles];

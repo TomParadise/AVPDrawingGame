@@ -20,10 +20,14 @@ public class Menu : MonoBehaviour
     public Button three;
     public Button four;
     public Button five;
+    public GameObject round;
+    public GameObject time;
     Image img;
     Button btn;
     bool pause;
     float volume = 0;
+    float rounds = 0;
+    float timer = 0;
     float i = 0;
     public AudioMixer mixer;
 
@@ -41,7 +45,7 @@ public class Menu : MonoBehaviour
         points = new Vector3[2];
 
         //Set the start point of the LineRenderer to the position of the GameObject. 
-        points[0] = Vector3.zero;
+        points[0] = 0.035f * transform.forward;
 
         //Set the end point 20 units away from the GO on the Z axis (pointing forward)
         points[1] = transform.position + transform.forward * 7.5f;
@@ -50,6 +54,7 @@ public class Menu : MonoBehaviour
         rend.SetPositions(points);
         rend.enabled = true;
     }
+
     public LayerMask layerMask;
 
     public bool AlignLineRenderer(LineRenderer rend)
@@ -115,41 +120,79 @@ public class Menu : MonoBehaviour
         }
         if (volume >= -80)
         {
-            onecb.normalColor = Color.white;
+            onecb.normalColor = Color.grey;
             one.colors = onecb;
         }
         if (volume >= -60)
         {
-            onecb.normalColor = Color.green;
+            onecb.normalColor = Color.white;
             one.colors = onecb;
-            twocb.normalColor = Color.white;
+            twocb.normalColor = Color.grey;
             two.colors = twocb;
         }
         if (volume >= -40)
         {
-            twocb.normalColor = Color.green;
+            twocb.normalColor = Color.white;
             two.colors = twocb;
-            threecb.normalColor = Color.white;
+            threecb.normalColor = Color.grey;
             three.colors = threecb;
         }
         if (volume >= -20)
         {
-            threecb.normalColor = Color.green;
+            threecb.normalColor = Color.white;
             three.colors = threecb;
-            fourcb.normalColor = Color.white;
+            fourcb.normalColor = Color.grey;
             four.colors = fourcb;
         }
         if (volume >= 0)
         {
-            fourcb.normalColor = Color.green;
+            fourcb.normalColor = Color.white;
             four.colors = fourcb;
-            fivecb.normalColor = Color.white;
+            fivecb.normalColor = Color.grey;
             five.colors = fivecb;
         }       
         if (volume >= 20)
         {
-            fivecb.normalColor = Color.green;
+            fivecb.normalColor = Color.white;
             five.colors = fivecb;
+        }
+        switch(rounds)
+        {
+            case 0:
+                round.GetComponent<Text>().text = "1";
+                break;
+            case 1:
+                round.GetComponent<Text>().text = "2";
+                break;
+            case 2:
+                round.GetComponent<Text>().text = "3";
+                break;
+            case 3:
+                round.GetComponent<Text>().text = "4";
+                break;
+            case 4:
+                round.GetComponent<Text>().text = "5";
+                break;
+            default:
+                round.GetComponent<Text>().text = "1";
+                break;
+
+        }
+        switch (timer)
+        {
+            case 0:
+                time.GetComponent<Text>().text = "30s";
+                break;
+            case 1:
+                round.GetComponent<Text>().text = "45s";
+                break;
+            case 2:
+                round.GetComponent<Text>().text = "60s";
+                break;
+            default:
+                round.GetComponent<Text>().text = "30s";
+                break;
+
         }
     }
 
@@ -184,6 +227,43 @@ public class Menu : MonoBehaviour
             mixer.SetFloat("MusicVol", (volume));
             PlayerPrefs.SetFloat("MusicVolume", volume);
             Debug.Log(volume);
+        }
+    }
+
+    public void RoundCUp()
+    {
+        if (rounds < 4)
+        {
+            rounds++;
+            PlayerPrefs.SetFloat("maxRounds", rounds);
+        }
+        
+    }
+
+    public void RoundCDown()
+    {
+        if(rounds > 0)
+        {
+            rounds--;
+            PlayerPrefs.SetFloat("maxRounds", rounds);
+        }
+    }
+
+    public void RoundTUp()
+    {
+        if (rounds < 2)
+        {
+            rounds++;
+            PlayerPrefs.SetFloat("maxTimer", rounds);
+        }
+    }
+
+    public void RoundTDown()
+    {
+        if (timer > 0)
+        {
+            timer--;
+            PlayerPrefs.SetFloat("maxTimer", rounds);
         }
     }
 }

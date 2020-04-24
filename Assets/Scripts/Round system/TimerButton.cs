@@ -70,8 +70,16 @@ public class TimerButton : MonoBehaviour
         {
             if (RoundManager.Instance.GetRoundOver())
             {
-                RoundManager.Instance.StartRound();
-                Destroy(gameObject);
+                if (RoundManager.Instance.GetCurrentRound() == RoundManager.Instance.GetMaxRoundCount())
+                {
+                    RoundManager.Instance.EndGame();
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    RoundManager.Instance.StartRound();
+                    Destroy(gameObject);
+                }
             }
             else
             {

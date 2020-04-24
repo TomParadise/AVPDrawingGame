@@ -23,19 +23,30 @@ public class LineRendererSettings : MonoBehaviour
     //Start is called before the first frame update
     void Start()
     {
-        img = panel.GetComponent<Image>();
+        //img = panel.GetComponent<Image>();
 
         //Get the LineRenderer attached to the GameObject. 
-        rend = gameObject.GetComponent<LineRenderer>();
+        if (rend == null)
+        {
+            rend = gameObject.GetComponent<LineRenderer>();
+        }
 
         //Initialize the LineRenderer
         points = new Vector3[2];
 
         //Set the start point of the LineRenderer to the position of the GameObject. 
-        points[0] = Vector3.zero;
+        if (gameObject.name == "Painting_Brush")
+        {
+            points[0] = 0.005f * transform.forward;
 
-        //Set the end point 20 units away from the GO on the Z axis (pointing forward)
-        points[1] = transform.position + transform.forward * 7.5f;
+            points[1] = 0.005f * transform.forward;
+        }
+        else
+        {
+            points[0] = 0.035f * transform.forward;
+
+            points[1] = 0.035f * transform.forward;
+        }
 
         //Finally set the positions array on the LineRenderer to our new values
         rend.SetPositions(points);
@@ -51,7 +62,7 @@ public class LineRendererSettings : MonoBehaviour
         //Debug.DrawRay(ray.origin, ray.direction);
         bool hitBtn = false;
 
-        if (Physics.Raycast(ray, out hit, layerMask))
+        if (Physics.Raycast(ray, out hit, 10, layerMask))
         {
             points[1] = transform.worldToLocalMatrix.MultiplyVector(transform.forward * hit.distance);
             if(hit.collider.gameObject.tag == "Button")
@@ -70,9 +81,15 @@ public class LineRendererSettings : MonoBehaviour
         }
         else
         {
-            points[1] = Vector3.zero;
+            if (gameObject.name == "Painting_Brush")
+            {
+                points[1] = 0.005f * transform.forward;
+            }
+            else
+            {
+                points[1] = 0.035f * transform.forward;
+            }
         }
-
         rend.SetPositions(points);
         rend.material.color = rend.startColor;
         return hitBtn;

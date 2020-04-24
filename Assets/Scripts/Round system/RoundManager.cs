@@ -19,6 +19,8 @@ public class RoundManager : MonoSingleton<RoundManager>
     [SerializeField] private int maxRounds = 3;//Number of rounds
     [SerializeField] private float maxTimer = 60.0f;//Amount of time each round
 
+    [SerializeField] private GameObject ExitMenu;//Menu prefab for exiting/restarting the scene
+
     public Material wrong;
     private int roundCount = 0;
 
@@ -153,15 +155,7 @@ public class RoundManager : MonoSingleton<RoundManager>
         mainCountdown = false;
         drawScript.StopDrawing();
         drawScript.enabled = false;
-        if (roundCount == maxRounds)
-        {
-            startTimer.text = "Game Over";
-            Destroy(gameObject);
-        }
-        else
-        {
-            RoundOver();
-        }
+        RoundOver();
     }
 
     private void RoundOver()
@@ -178,5 +172,13 @@ public class RoundManager : MonoSingleton<RoundManager>
     public bool GetInRound()
     {
         return inRound;
+    }
+
+    public void EndGame()
+    {
+        drawScript.KillTrails();
+        Instantiate(ExitMenu);
+        drawScript.GetComponent<LineRenderer>().enabled = true;
+        drawScript.GetComponent<LineRendererSettings>().enabled = true;
     }
 }

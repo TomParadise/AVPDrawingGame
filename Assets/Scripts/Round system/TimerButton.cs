@@ -68,6 +68,7 @@ public class TimerButton : MonoBehaviour
         //if hand collided begin the countdown and set 'pressed' to true
         if (other.tag == "Hand")
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Game/button_press", transform.position);
             if (RoundManager.Instance.GetRoundOver())
             {
                 RoundManager.Instance.StartRound();

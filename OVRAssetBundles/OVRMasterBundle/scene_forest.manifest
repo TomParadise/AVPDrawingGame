@@ -1,0 +1,133 @@
+ManifestFileVersion: 0
+CRC: 4032825443
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b07aecb2c5a09ec826d0557873415c38
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4ee46eb047702195cb57303370686fab
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: df9f338034892c44ebb62d97894772f1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 058598904dbaa2449a0089bbd9057c94, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6f186ee0622054e4693ce83162d85e7b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7e933e81d3c20c74ea6fdc708a67e3a5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 370f36429eb178248886f95e10097abe, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0950df82e7936c84983497630bde5b54, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d0e38e436cff1c74da9694b1b46e8396, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8ec6c9550e2c23947964f1f6a9b514fc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5178bc8574ce2bf4388e787a2e2af326, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b71d1996d67004241a3b69960856ffcb, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f32bf33a01f9df345a24eba394ed98af, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4f07515ada089df47868559a20dd6783, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f9a3c16d0a19b1c4d91c9f0d5eb3944a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 143
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+- Class: 225
+  Script: {instanceID: 0}
+- Class: 258
+  Script: {instanceID: 0}
+Assets:
+- Assets/Scenes/Forest.unity
+Dependencies:
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_resources
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_fbx0
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_fbx1
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_controller0
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_txt0
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_prefab0
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_png0
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_exr0

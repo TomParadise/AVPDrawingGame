@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2108933487
+CRC: 3948793668
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ef7bae4bee65587dddfa958ebe313c36
+    Hash: db828b22f097661a3d9082db0f563da3
   TypeTreeHash:
     serializedVersion: 2
     Hash: 2164263bd948184a9373784f776f453a
@@ -16,35 +16,17 @@ ClassTypes:
 - Class: 48
   Script: {instanceID: 0}
 Assets:
-- Assets/ExampleAssets/Materials/PaintLabel_Mat.mat
-- Assets/ExampleAssets/Materials/HardHat_Mat.mat
-- Assets/ExampleAssets/Materials/Plastic_White_Mat.mat
-- Assets/ExampleAssets/Materials/Plastic_Rough_Mat.mat
-- Assets/ExampleAssets/Materials/ConstructionLight_Mat.mat
-- Assets/ExampleAssets/Materials/DryWall_Mat.mat
-- Assets/ExampleAssets/Materials/Ground_Mat.mat
-- Assets/ExampleAssets/Materials/Stud_Mat.mat
-- Assets/ExampleAssets/Materials/Metal_Simple_Mat.mat
-- Assets/ExampleAssets/Materials/DryWallPainted_Mat.mat
-- Assets/ExampleAssets/Materials/Plastic_Transparent.mat
-- Assets/ExampleAssets/Materials/PaintBrush_Mat.mat
-- Assets/ExampleAssets/Materials/OBS_Mat.mat
-- Assets/ExampleAssets/Materials/Plastic_Black_Mat.mat
-- Assets/Materials/Skybox_Mat.mat
-- Assets/ExampleAssets/Materials/Hammer_Mat.mat
-- Assets/ExampleAssets/Materials/Plastic_Ridges_Mat.mat
-- Assets/ExampleAssets/Materials/LightBulb_Mat.mat
-- Assets/ExampleAssets/Materials/Jigsaw_Mat.mat
-- Assets/ExampleAssets/Materials/Plastic_Gray_Mat.mat
-- Assets/ExampleAssets/Materials/Metal_Blue_Simple_Mat.mat
-- Assets/ExampleAssets/Materials/Paint1G_WAnim_Material.mat
-- Assets/ExampleAssets/Materials/Strap_Mat.mat
-- Assets/ExampleAssets/Materials/Liquid_Mat.mat
-- Assets/ExampleAssets/Materials/Plastic_Yellow_Mat.mat
+- Assets/Scripts/Round system/wrong.mat
+- Assets/Scripts/Round system/correct.mat
+- Assets/Scripts/Round system/none.mat
+- Assets/Oculus/SampleFramework/Usage/DistanceGrab/Materials/Ball03WithOutline.mat
+- Assets/Textures/Forest_SkyBox.mat
+- Assets/Oculus/SampleFramework/Usage/SharedAssets/Materials/ToyCubeMat.mat
+- Assets/Materials/PaintbrushTipMat.mat
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Materials/touchController_basecolor.mat
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/Materials/OculusTouchForQuestAndRiftS_Material.mat
 Dependencies:
-- D:/AVPDemo/OVRAssetBundles/OVRMasterBundle/asset_tif0
-- D:/AVPDemo/OVRAssetBundles/OVRMasterBundle/asset_tif1
-- D:/AVPDemo/OVRAssetBundles/OVRMasterBundle/asset_shader0
-- D:/AVPDemo/OVRAssetBundles/OVRMasterBundle/asset_shadergraph0
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_png0
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_jpg0
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_tga0
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_shader0

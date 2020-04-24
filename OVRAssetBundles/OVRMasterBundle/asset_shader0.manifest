@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3631906376
+CRC: 38021837
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ca3aeeb84280467e1cf3648bcf6c7eda
+    Hash: 2c8d2b4d22946d94ec385b3bd68482d7
   TypeTreeHash:
     serializedVersion: 2
     Hash: 677a1d6a6e8c5d2da1d9d0fadde392d8
@@ -12,5 +12,5 @@ ClassTypes:
 - Class: 48
   Script: {instanceID: 0}
 Assets:
-- Packages/com.unity.render-pipelines.lightweight/Shaders/Lit.shader
+- Assets/Oculus/SampleFramework/Usage/DistanceGrab/Materials/ToyCubeWithOutline.shader
 Dependencies: []

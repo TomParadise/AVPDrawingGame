@@ -1,0 +1,6 @@
+Leaf,Moss,Grass,Mushroom,Bush,Weeds,Flowers,Toadstool,Dandelion,Sunflower
+Tree,Tree stump,Log,Twig,Stick,Branch,Fire wood,Apple tree,Pear tree
+Lizard,Spider,Beetle,Cobweb,Moth,Butterfly,Mouse,Rat
+Lake,Pond,River,Stream,Puddle,Waterfall,Raindrop,Rain
+Bear,Wolf,Rabbit,Deer,Badger,Fox,Birds,Wildlife,Bambi,Raccoon,Squirrel,Robin,Owl,Crow
+Tent,Camping,Walking,Running,Horse,Lamp,Lantern,Campire,Candle,Fire,Soup

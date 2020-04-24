@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 969528746
+CRC: 855758972
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 9f8e190f7166115b958450f365c5dc0f
+    Hash: 36c2d6f87d834006bab657df536b43e8
   TypeTreeHash:
     serializedVersion: 2
     Hash: f881add57992e661af442a7356112ea5
@@ -32,11 +32,15 @@ ClassTypes:
 - Class: 137
   Script: {instanceID: 0}
 Assets:
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Models/right_touch_controller_model_skel.fbx
+- Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_neutral_button01_mask_anim.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_joy_N_anim.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_joy_SE_anim.fbx
+- Assets/Models/Forest/Forest_Fence1.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_joy_SE_anim.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_joy_N_anim.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_button02_anim.fbx
+- Assets/Models/Skybox.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_joy_NE_anim.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Left.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_neutral_trigger_pull_mask_anim.fbx
@@ -47,10 +51,6 @@ Assets:
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Models/left_touch_controller_model_skel.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_button01_anim.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/l_controller_trigger_pull_anim.fbx
-- Assets/ExampleAssets/Models/magneticlevel_low.fbx
-- Assets/ExampleAssets/Models/safetyhat_low.fbx
 - Assets/Oculus/SampleFramework/Core/TouchControllers/Animations/r_controller_joy_NE_anim.fbx
 Dependencies:
-- D:/AVPDemo/OVRAssetBundles/OVRMasterBundle/asset_fbx0
-- D:/AVPDemo/OVRAssetBundles/OVRMasterBundle/asset_mat0
-- D:/AVPDemo/OVRAssetBundles/OVRMasterBundle/asset_shader0
+- D:/AVPDrawingGame/Draw It!/OVRAssetBundles/OVRMasterBundle/asset_mat0

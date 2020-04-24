@@ -98,6 +98,8 @@ public class Menu : MonoBehaviour
         AlignLineRenderer(rend);
         if (AlignLineRenderer(rend) && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) != 0 && !canPress)
         {
+            Debug.Log("click");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Menu/menu_click");
             canPress = true;
             btn.onClick.Invoke();
         }

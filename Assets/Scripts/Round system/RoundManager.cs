@@ -53,6 +53,8 @@ public class RoundManager : MonoSingleton<RoundManager>
 
     private void Start()
     {
+        maxRounds = PlayerPrefs.GetInt("maxRounds");
+        maxTimer = PlayerPrefs.GetInt("maxTimer");
         music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/forest");
         music.start();
         //set initial positions and call startRound()

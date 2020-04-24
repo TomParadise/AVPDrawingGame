@@ -15,15 +15,19 @@ public class Menu : MonoBehaviour
 
     //Declare a panel to change.
     public GameObject panel;
-    public Button one;
-    public Button two;
-    public Button three;
-    public Button four;
-    public Button five;
+    public Image one;
+    public Image two;
+    public Image three;
+    public Image four;
+    public Image five;
+    public GameObject round;
+    public GameObject time;
     Image img;
     Button btn;
     bool pause;
     float volume = 0;
+    int rounds = 1;
+    int timer = 2;
     float i = 0;
     public AudioMixer mixer;
 
@@ -41,7 +45,7 @@ public class Menu : MonoBehaviour
         points = new Vector3[2];
 
         //Set the start point of the LineRenderer to the position of the GameObject. 
-        points[0] = Vector3.zero;
+        points[0] = 0.035f * transform.forward;
 
         //Set the end point 20 units away from the GO on the Z axis (pointing forward)
         points[1] = transform.position + transform.forward * 7.5f;
@@ -50,6 +54,7 @@ public class Menu : MonoBehaviour
         rend.SetPositions(points);
         rend.enabled = true;
     }
+
     public LayerMask layerMask;
 
     public bool AlignLineRenderer(LineRenderer rend)
@@ -89,12 +94,6 @@ public class Menu : MonoBehaviour
 
     void Update()
     {
-        ColorBlock onecb = one.colors;
-        ColorBlock twocb = two.colors;
-        ColorBlock threecb = three.colors;
-        ColorBlock fourcb = four.colors;
-        ColorBlock fivecb = five.colors;
-
         AlignLineRenderer(rend);
         if (AlignLineRenderer(rend) && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) != 0 && !canPress)
         {
@@ -115,42 +114,32 @@ public class Menu : MonoBehaviour
         }
         if (volume >= -80)
         {
-            onecb.normalColor = Color.white;
-            one.colors = onecb;
+            one.GetComponent<Image>().color = Color.grey;
         }
         if (volume >= -60)
         {
-            onecb.normalColor = Color.green;
-            one.colors = onecb;
-            twocb.normalColor = Color.white;
-            two.colors = twocb;
+            one.GetComponent<Image>().color = Color.white;
+            two.GetComponent<Image>().color = Color.grey;
         }
         if (volume >= -40)
         {
-            twocb.normalColor = Color.green;
-            two.colors = twocb;
-            threecb.normalColor = Color.white;
-            three.colors = threecb;
+            two.GetComponent<Image>().color = Color.white;
+            three.GetComponent<Image>().color = Color.grey;
         }
         if (volume >= -20)
         {
-            threecb.normalColor = Color.green;
-            three.colors = threecb;
-            fourcb.normalColor = Color.white;
-            four.colors = fourcb;
+            three.GetComponent<Image>().color = Color.white;
+            four.GetComponent<Image>().color = Color.grey;
         }
         if (volume >= 0)
         {
-            fourcb.normalColor = Color.green;
-            four.colors = fourcb;
-            fivecb.normalColor = Color.white;
-            five.colors = fivecb;
+            four.GetComponent<Image>().color = Color.white;
+            five.GetComponent<Image>().color = Color.grey;
         }       
         if (volume >= 20)
         {
-            fivecb.normalColor = Color.green;
-            five.colors = fivecb;
-        }
+            five.GetComponent<Image>().color = Color.white;
+        }        
     }
 
     public void ExitGame()
@@ -160,6 +149,9 @@ public class Menu : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        PlayerPrefs.SetInt("maxTimer", (timer * 20));
+        PlayerPrefs.SetInt("maxRounds", rounds);
+        PlayerPrefs.SetFloat("MusicVolume", volume);
         SceneManager.LoadScene(sceneName);
     }
 
@@ -170,8 +162,6 @@ public class Menu : MonoBehaviour
             i++;
             volume = i * 20;
             mixer.SetFloat("MusicVol", (volume));
-            PlayerPrefs.SetFloat("MusicVolume", volume);
-            Debug.Log(volume);
         }
     }
 
@@ -182,8 +172,43 @@ public class Menu : MonoBehaviour
             i--;
             volume = i * 20;
             mixer.SetFloat("MusicVol", (volume));
-            PlayerPrefs.SetFloat("MusicVolume", volume);
-            Debug.Log(volume);
+        }
+    }
+
+    public void RoundCUp()
+    {
+        if (rounds < 5)
+        {
+            rounds++;
+
+            round.GetComponent<Text>().text = rounds.ToString();
+        }
+    }
+
+    public void RoundCDown()
+    {
+        if(rounds > 1)
+        {
+            rounds--;
+            round.GetComponent<Text>().text = rounds.ToString();
+        }
+    }
+
+    public void RoundTUp()
+    {
+        if (timer < 3)
+        {
+            timer++;  
+            time.GetComponent<Text>().text = (timer*20).ToString()+"s";
+        }
+    }
+
+    public void RoundTDown()
+    {
+        if (timer > 1)
+        {
+            timer--;
+            time.GetComponent<Text>().text = (timer * 20).ToString() + "s";
         }
     }
 }

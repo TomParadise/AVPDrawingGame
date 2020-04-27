@@ -136,7 +136,7 @@ MonoBehaviour:
   Path: event:/Game/score_point
   guid: 1c1b0ba5528f24458cd112f68a12d22a
   Banks:
-  - {fileID: 3224671390302754674}
+  - {fileID: -2674684844843738301}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -210,7 +210,7 @@ MonoBehaviour:
   Path: event:/Game/button_press
   guid: fd26821277bceb408d1e1292488e9888
   Banks:
-  - {fileID: 3224671390302754674}
+  - {fileID: -2674684844843738301}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -285,12 +285,12 @@ MonoBehaviour:
   Path: event:/Painting/painting
   guid: e98fbc6fb00f474ebc315a49b6e900ed
   Banks:
-  - {fileID: 3224671390302754674}
+  - {fileID: -2674684844843738301}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -1004160377968805535}
+  - {fileID: -4266284596152972033}
   MinDistance: 1
   MaxDistance: 20
   Length: 18808
@@ -312,6 +312,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-4266284596152972033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/painting/drawing
+  m_EditorClassIdentifier: 
+  Name: drawing
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-3803708970493889228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,7 +380,7 @@ MonoBehaviour:
   Path: event:/Colour_Change/colour_change
   guid: 218f76b4bdb08e408d1200390c16aef4
   Banks:
-  - {fileID: 3224671390302754674}
+  - {fileID: -2674684844843738301}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -407,6 +424,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-2674684844843738301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/DrawItFMOD/Build/Desktop/Master Bank.bank
+  SubDir: 
+  lastModified: 637235971317479856
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-2057413133802130080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,7 +476,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,7 +491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 7325159330490347119}
-  - {fileID: 3224671390302754674}
+  - {fileID: -2674684844843738301}
   EditorEvents:
   - {fileID: -3317889403574521883}
   - {fileID: -5073931299890021497}
@@ -467,10 +502,10 @@ MonoBehaviour:
   - {fileID: 710521760034247381}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 3224671390302754674}
+  - {fileID: -2674684844843738301}
   StringsBanks:
   - {fileID: 7325159330490347119}
-  stringsBankWriteTime: 637234099292311506
+  stringsBankWriteTime: 637235971317300331
   cacheVersion: 3
 --- !u!114 &710521760034247381
 MonoBehaviour:
@@ -487,7 +522,7 @@ MonoBehaviour:
   Path: event:/Music/forest
   guid: 99daa59d3211834583a9f3b5a6d2c69e
   Banks:
-  - {fileID: 3224671390302754674}
+  - {fileID: -2674684844843738301}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -510,7 +545,7 @@ MonoBehaviour:
   Path: event:/Menu/menu_click
   guid: 591004af0ee0d94fba2591a9f58df8bf
   Banks:
-  - {fileID: 3224671390302754674}
+  - {fileID: -2674684844843738301}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -605,7 +640,7 @@ MonoBehaviour:
   lastModified: 637234099292599179
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &3379766119691929329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,7 +731,7 @@ MonoBehaviour:
   Path: event:/Menu/menu_play
   guid: 2cb02c9123a85546942e1b3afcb62f20
   Banks:
-  - {fileID: 3224671390302754674}
+  - {fileID: -2674684844843738301}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -793,7 +828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/DrawItFMOD/Build/Desktop/Master Bank.strings.bank
   SubDir: 
-  lastModified: 637234099292311506
+  lastModified: 637235971317300331
   LoadResult: 0
   FileSizes:
   - Name: Desktop

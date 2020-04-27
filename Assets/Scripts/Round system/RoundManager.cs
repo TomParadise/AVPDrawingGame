@@ -65,6 +65,15 @@ public class RoundManager : MonoSingleton<RoundManager>
         {
             music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/desert");
         }
+        if(maxTimer == 0)
+        {
+            maxTimer = 40;
+        }
+
+        if(maxRounds == 0)
+        {
+            maxRounds = 3;
+        }
         music.start();
         ChangeImage.Instance.Init();
         //set initial positions and call startRound()

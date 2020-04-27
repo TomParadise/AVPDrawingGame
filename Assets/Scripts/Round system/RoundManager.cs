@@ -19,7 +19,7 @@ public class RoundManager : MonoSingleton<RoundManager>
     [SerializeField] private int maxRounds = 3;//Number of rounds
     [SerializeField] private float maxTimer = 60.0f;//Amount of time each round
 
-    [SerializeField] private GameObject ExitMenu;//Menu prefab for exiting/restarting the scene
+    [SerializeField] private GameObject ExitMenu;//Menu for exiting/restarting the scene
 
     public Material wrong;
     private int roundCount = 0;
@@ -50,7 +50,7 @@ public class RoundManager : MonoSingleton<RoundManager>
     new private void OnDestroy()
     {
         music.release();
-        music.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        music.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     private void Start()
@@ -65,7 +65,8 @@ public class RoundManager : MonoSingleton<RoundManager>
         {
             music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/desert");
         }
-            music.start();
+        music.start();
+        ChangeImage.Instance.Init();
         //set initial positions and call startRound()
         buttonSpawnPos = new Vector3(0.0f, 0.75f, 1.0f);
         if (cameraPos.localPosition.y < 0)
@@ -195,8 +196,8 @@ public class RoundManager : MonoSingleton<RoundManager>
     public void EndGame()
     {
         drawScript.KillTrails();
-        Instantiate(ExitMenu);
         drawScript.GetComponent<LineRenderer>().enabled = true;
-        drawScript.GetComponent<LineRendererSettings>().enabled = true;
+        drawScript.GetComponent<Menu>().enabled = true;
+        ExitMenu.SetActive(true);
     }
 }

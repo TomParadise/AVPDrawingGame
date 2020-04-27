@@ -40,12 +40,21 @@ public class Menu : MonoBehaviour
     [FMODUnity.EventRef]
     FMOD.Studio.EventInstance music;
 
+    private void OnDestroy()
+    {
+        music.release();
+        music.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+
     //Start is called before the first frame update
     void Start()
     {
-        //menu music
-        music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/menu");
-        music.start();
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            //menu music
+            music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/menu");
+            music.start();
+        }
 
         //Set FMOD buses
         Master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
@@ -56,7 +65,10 @@ public class Menu : MonoBehaviour
         SFX.setVolume(SFXVolume);
         Music.setVolume(musicVolume);
 
-        img = panel.GetComponent<Image>();
+        if (panel != null)
+        {
+            img = panel.GetComponent<Image>();
+        }
 
         //Get the LineRenderer attached to the GameObject. 
         rend = gameObject.GetComponent<LineRenderer>();
@@ -64,12 +76,22 @@ public class Menu : MonoBehaviour
         //Initialize the LineRenderer
         points = new Vector3[2];
 
-        //Set the start point of the LineRenderer to the position of the GameObject. 
-        points[0] = 0.035f * transform.forward;
+        if (gameObject.name == "Painting_Brush")
+        {
+            //Set the start point of the LineRenderer to the position of the GameObject. 
+            points[0] = 0.005f * Camera.main.transform.forward;
 
-        //Set the end point 20 units away from the GO on the Z axis (pointing forward)
-        points[1] = transform.position + transform.forward * 7.5f;
+            //Set the end point 20 units away from the GO on the Z axis (pointing forward)
+            points[1] = transform.position + transform.forward * 5.5f;
+        }
+        else
+        {
+            //Set the start point of the LineRenderer to the position of the GameObject. 
+            points[0] = 0.035f * transform.forward;
 
+            //Set the end point 20 units away from the GO on the Z axis (pointing forward)
+            points[1] = transform.position + transform.forward * 7.5f;
+        }
         //Finally set the positions array on the LineRenderer to our new values
         rend.SetPositions(points);
         rend.enabled = true;
@@ -85,7 +107,7 @@ public class Menu : MonoBehaviour
         //Debug.DrawRay(ray.origin, ray.direction);
         bool hitBtn = false;
 
-        if (Physics.Raycast(ray, out hit, layerMask))
+        if (Physics.Raycast(ray, out hit, 10, layerMask))
         {
             points[1] = transform.worldToLocalMatrix.MultiplyVector(transform.forward * hit.distance);
             if (hit.collider.gameObject.tag == "Button")
@@ -104,7 +126,7 @@ public class Menu : MonoBehaviour
         }
         else
         {
-            points[1] = Vector3.zero;
+            points[1] = points[0];
         }
 
         rend.SetPositions(points);
@@ -144,7 +166,7 @@ public class Menu : MonoBehaviour
         PlayerPrefs.SetInt("maxTimer", (timer * 20));
         PlayerPrefs.SetInt("maxRounds", rounds);
         PlayerPrefs.SetFloat("MusicVolume", volume);
-        PlayerPrefs.SetFloat("levelName", volume);
+        PlayerPrefs.SetString("level", sceneName);
 
         music.release();
         music.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);

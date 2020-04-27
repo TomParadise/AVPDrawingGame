@@ -16,12 +16,16 @@ public class Menu : MonoBehaviour
     //Declare a panel to change.
     public GameObject panel;
     public Image[] volumeIndicator;
+    public Image[] SFXVolumeIndicator;
+    public Image[] musicVolumeIndicator;
     public GameObject round;
     public GameObject time;
     Image img;
     Button btn;
     bool pause;
     float volume = 0.6f;
+    float SFXVolume = 0.6f;
+    float musicVolume = 0.6f;
     int rounds = 3;
     int timer = 2;
     float i = 0;
@@ -49,6 +53,8 @@ public class Menu : MonoBehaviour
         SFX = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
 
         Master.setVolume(volume);
+        SFX.setVolume(SFXVolume);
+        Music.setVolume(musicVolume);
 
         img = panel.GetComponent<Image>();
 
@@ -222,5 +228,87 @@ public class Menu : MonoBehaviour
             timer--;
             time.GetComponent<Text>().text = (timer * 20).ToString() + "s";
         }
+    }
+    public void SFXVolumeUp()
+    {
+        if (SFXVolume < 0.9f)
+        {
+            SFXVolume += 0.2f;
+            for (int i = 0; i < SFXVolumeIndicator.Length; i++)
+            {
+                if ((i + 1) * 0.2f <= SFXVolume + 0.1)
+                {
+                    SFXVolumeIndicator[i].GetComponent<Image>().color = Color.white;
+                }
+                else
+                {
+                    SFXVolumeIndicator[i].GetComponent<Image>().color = Color.grey;
+                }
+            }
+        }
+        SFX.setVolume(SFXVolume);
+        //mixer.SetFloat("MusicVol", (volume));
+    }
+
+    public void SFXVolumeDown()
+    {
+        if (SFXVolume > 0.1f)
+        {
+            SFXVolume -= 0.2f;
+            for (int i = 0; i < SFXVolumeIndicator.Length; i++)
+            {
+                if ((i + 1) * 0.2f <= SFXVolume)
+                {
+                    SFXVolumeIndicator[i].GetComponent<Image>().color = Color.white;
+                }
+                else
+                {
+                    SFXVolumeIndicator[i].GetComponent<Image>().color = Color.grey;
+                }
+            }
+        }
+        SFX.setVolume(SFXVolume);
+        //mixer.SetFloat("MusicVol", (volume));
+    }
+    public void MusicVolumeUp()
+    {
+        if (musicVolume < 0.9f)
+        {
+            musicVolume += 0.2f;
+            for (int i = 0; i < musicVolumeIndicator.Length; i++)
+            {
+                if ((i + 1) * 0.2f <= musicVolume + 0.1)
+                {
+                    musicVolumeIndicator[i].GetComponent<Image>().color = Color.white;
+                }
+                else
+                {
+                    musicVolumeIndicator[i].GetComponent<Image>().color = Color.grey;
+                }
+            }
+        }
+        music.setVolume(musicVolume);
+        //mixer.SetFloat("MusicVol", (volume));
+    }
+
+    public void MusicVolumeDown()
+    {
+        if (musicVolume > 0.1f)
+        {
+            musicVolume -= 0.2f;
+            for (int i = 0; i < musicVolumeIndicator.Length; i++)
+            {
+                if ((i + 1) * 0.2f <= musicVolume)
+                {
+                    musicVolumeIndicator[i].GetComponent<Image>().color = Color.white;
+                }
+                else
+                {
+                    musicVolumeIndicator[i].GetComponent<Image>().color = Color.grey;
+                }
+            }
+        }
+        music.setVolume(musicVolume);
+        //mixer.SetFloat("MusicVol", (volume));
     }
 }

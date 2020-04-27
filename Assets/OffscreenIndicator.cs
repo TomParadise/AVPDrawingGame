@@ -90,6 +90,9 @@ public class OffscreenIndicator : MonoBehaviour
 
     private void OnDestroy()
     {
-        Destroy(indicator.gameObject);
+        if (indicator != null)
+        {
+            Destroy(indicator.gameObject);
+        }
     }
 }

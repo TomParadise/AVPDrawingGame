@@ -19,13 +19,12 @@ public class RoundManager : MonoSingleton<RoundManager>
     [SerializeField] private int maxRounds = 3;//Number of rounds
     [SerializeField] private float maxTimer = 60.0f;//Amount of time each round
 
-    [SerializeField] private GameObject ExitMenu;//Menu prefab for exiting/restarting the scene
+    [SerializeField] private GameObject ExitMenu;//Menu for exiting/restarting the scene
 
     public Material wrong;
     private int roundCount = 0;
 
     private Vector3 buttonSpawnPos;
-    private Vector3 wordBankSpawnPos;
 
     private float timer = 3.0f;
 
@@ -34,6 +33,9 @@ public class RoundManager : MonoSingleton<RoundManager>
 
     private bool roundOver = false;
     public bool inRound = false;
+
+    [FMODUnity.EventRef]
+    FMOD.Studio.EventInstance music;
 
     public int GetMaxRoundCount()
     {
@@ -45,15 +47,32 @@ public class RoundManager : MonoSingleton<RoundManager>
         return roundCount;
     }
 
+    new private void OnDestroy()
+    {
+        music.release();
+        music.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+
     private void Start()
     {
+        maxRounds = PlayerPrefs.GetInt("maxRounds");
+        maxTimer = PlayerPrefs.GetInt("maxTimer");
+        if(PlayerPrefs.GetString("level") == "Forest")
+        {
+            music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/forest");
+        }
+        else if (PlayerPrefs.GetString("level") == "Desert")
+        {
+            music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/desert");
+        }
+        music.start();
+        ChangeImage.Instance.Init();
         //set initial positions and call startRound()
         buttonSpawnPos = new Vector3(0.0f, 0.75f, 1.0f);
         if (cameraPos.localPosition.y < 0)
         {
             buttonSpawnPos.y += cameraPos.localPosition.y;
         }
-        wordBankSpawnPos = wordBank.transform.position;
         StartRound();
     }
 
@@ -125,7 +144,7 @@ public class RoundManager : MonoSingleton<RoundManager>
         Instantiate(button);
         timer = 3.0f;
 
-        wordBank.transform.position = wordBankSpawnPos;
+        wordBank.gameObject.SetActive(true);
         Quaternion rot = wordBank.transform.rotation;
         rot.y = 0;
         wordBank.transform.rotation = rot;
@@ -141,7 +160,7 @@ public class RoundManager : MonoSingleton<RoundManager>
     {
         startCountdown = true;
 
-        wordBank.transform.position = new Vector3(wordBankSpawnPos.x, wordBankSpawnPos.y, -10);
+        wordBank.gameObject.SetActive(false);
         Quaternion rot = wordBank.transform.rotation;
         rot.y = 180;
         wordBank.transform.rotation = rot;
@@ -177,8 +196,8 @@ public class RoundManager : MonoSingleton<RoundManager>
     public void EndGame()
     {
         drawScript.KillTrails();
-        Instantiate(ExitMenu);
         drawScript.GetComponent<LineRenderer>().enabled = true;
-        drawScript.GetComponent<LineRendererSettings>().enabled = true;
+        drawScript.GetComponent<Menu>().enabled = true;
+        ExitMenu.SetActive(true);
     }
 }

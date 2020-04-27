@@ -21,6 +21,8 @@ public class DrawScript : MonoBehaviour
     private int currentWidth = 1;
     private string currentColour = "White";
 
+    [FMODUnity.EventRef]
+    FMOD.Studio.EventInstance paintingAudioEvent;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,10 @@ public class DrawScript : MonoBehaviour
                 //Debug.Log("on");
                 trail.Emit(1);
                 drawing = true;
+                paintingAudioEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Painting/painting");
+                paintingAudioEvent.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+                paintingAudioEvent.setParameterByName("drawing", 1.0f, true);
+                paintingAudioEvent.start();
             }
         }
         //if not pressing the trigger kill particles but keep current trails
@@ -114,9 +120,10 @@ public class DrawScript : MonoBehaviour
             default:
                 return false;
         }
-        if (changeTip)
+        if (changeTip && newColour != GetComponent<MeshRenderer>().materials[2].color)
         {
             GetComponent<MeshRenderer>().materials[2].color = newColour;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Colour_change/colour_change", transform.position);
         }
         return true;
     }
@@ -136,8 +143,12 @@ public class DrawScript : MonoBehaviour
             }
             trail.SetParticles(particles);
         }
-
-        drawing = false;            
+        if(drawing)
+        {
+            paintingAudioEvent.setParameterByName("drawing", 0.0f, true);
+            paintingAudioEvent.release();
+            drawing = false;
+        }         
     }
 
     //loop through all particle systems and set remaining life to 0 so trails die

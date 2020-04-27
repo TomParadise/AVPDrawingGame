@@ -10,7 +10,7 @@ public class ChangeImage : MonoSingleton<ChangeImage>
     public Image prefab;
     int score;
 
-    private void Start()
+    public void Init()
     {
         images = new Image[RoundManager.Instance.GetMaxRoundCount()];
         RectTransform rect = GetComponent<RectTransform>();
@@ -20,7 +20,7 @@ public class ChangeImage : MonoSingleton<ChangeImage>
             images[i] = Instantiate(prefab, this.transform);
             TextMeshProUGUI currtext = images[i].transform.GetChild(0).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
             currtext.text = "Round " + (i + 1).ToString();
-            images[i].transform.localPosition = new Vector3((i*0.55f) + ((images.Length-1)*-0.275f),0,0);
+            images[i].transform.localPosition = new Vector3((i * 0.55f) + ((images.Length - 1) * -0.275f), 0, 0);
         }
     }
 

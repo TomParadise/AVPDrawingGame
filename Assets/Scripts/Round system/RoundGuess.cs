@@ -16,6 +16,7 @@ public class RoundGuess : MonoSingleton<RoundGuess>
         {
             if (RoundManager.Instance.GetInRound())
             {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Game/score_point", transform.position);
                 ChangeImage.Instance.images[RoundManager.Instance.GetCurrentRound() - 1].transform.GetChild(0).GetComponent<Image>().material = correct;
                 RoundManager.Instance.EndRound();
             }

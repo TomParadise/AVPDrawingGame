@@ -24,8 +24,8 @@ public class Menu : MonoBehaviour
     Button btn;
     bool pause;
     float volume = 0.6f;
-    float SFXVolume = 0.6f;
-    float musicVolume = 0.6f;
+    float SFXVolume = 1.0f;
+    float musicVolume = 1.0f;
     int rounds = 3;
     int timer = 2;
     float i = 0;
@@ -44,7 +44,7 @@ public class Menu : MonoBehaviour
     void Start()
     {
         //menu music
-        music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/forest");
+        music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/menu");
         music.start();
 
         //Set FMOD buses
@@ -144,6 +144,7 @@ public class Menu : MonoBehaviour
         PlayerPrefs.SetInt("maxTimer", (timer * 20));
         PlayerPrefs.SetInt("maxRounds", rounds);
         PlayerPrefs.SetFloat("MusicVolume", volume);
+        PlayerPrefs.SetFloat("levelName", volume);
 
         music.release();
         music.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);

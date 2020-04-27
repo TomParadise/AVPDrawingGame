@@ -55,8 +55,15 @@ public class RoundManager : MonoSingleton<RoundManager>
     {
         maxRounds = PlayerPrefs.GetInt("maxRounds");
         maxTimer = PlayerPrefs.GetInt("maxTimer");
-        music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/forest");
-        music.start();
+        if(PlayerPrefs.GetString("level") == "Forest")
+        {
+            music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/forest");
+        }
+        else if (PlayerPrefs.GetString("level") == "Desert")
+        {
+            music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/desert");
+        }
+            music.start();
         //set initial positions and call startRound()
         buttonSpawnPos = new Vector3(0.0f, 0.75f, 1.0f);
         if (cameraPos.localPosition.y < 0)

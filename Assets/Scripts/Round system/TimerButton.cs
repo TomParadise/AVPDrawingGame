@@ -71,8 +71,16 @@ public class TimerButton : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot("event:/Game/button_press", transform.position);
             if (RoundManager.Instance.GetRoundOver())
             {
-                RoundManager.Instance.StartRound();
-                Destroy(gameObject);
+                if (RoundManager.Instance.GetCurrentRound() == RoundManager.Instance.GetMaxRoundCount())
+                {
+                    RoundManager.Instance.EndGame();
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    RoundManager.Instance.StartRound();
+                    Destroy(gameObject);
+                }
             }
             else
             {

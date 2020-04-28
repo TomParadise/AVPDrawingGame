@@ -22,7 +22,7 @@ public class TimerButton : MonoBehaviour
             text.text = "Next round";
             Vector3 rot = transform.eulerAngles;
             rot.y = -90;
-            pos.x = -0.75f;
+            pos.x = -4;
             pos.z = 0;
             transform.eulerAngles = rot;
         }

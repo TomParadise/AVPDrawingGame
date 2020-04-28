@@ -8,13 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 5e3b1b26a3061c24ab012a1300be5170
-  - enabled: 1
-    path: Assets/Scenes/Forest.unity
+  - enabled: 0
+    path: Assets/Scenes/ForestOLD.unity
     guid: 3bac83293d80fe94bba707b3f258678d
-  - enabled: 1
-    path: Assets/Scenes/Desert.unity
-    guid: 2975420cdb16a26408571bde7a154811
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Forest.unity
+    guid: b0e8ba0efab50e649952f5e999dcd384
   m_configObjects: {}

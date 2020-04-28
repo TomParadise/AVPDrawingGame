@@ -65,17 +65,22 @@ public class RoundManager : MonoSingleton<RoundManager>
         {
             music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/desert");
         }
-        if(maxTimer == 0)
-        {
-            maxTimer = 40;
+        if(maxTimer == 0)
+
+        {
+
+            maxTimer = 40;
+
         }
 
-        if(maxRounds == 0)
-        {
-            maxRounds = 3;
+        if(maxRounds == 0)
+
+        {
+
+            maxRounds = 3;
+
         }
         music.start();
-        ChangeImage.Instance.Init();
         //set initial positions and call startRound()
         buttonSpawnPos = new Vector3(0.0f, 0.75f, 1.0f);
         if (cameraPos.localPosition.y < 0)
@@ -126,18 +131,18 @@ public class RoundManager : MonoSingleton<RoundManager>
     void RoundCountdown()
     {
         timer -= Time.deltaTime;
+        roundTimer.text = "timer\n";
         if (timer < 10)
         {
-            roundTimer.text = "0" + timer.ToString("F2") + "s";
+            roundTimer.text += "0" + timer.ToString("F2") + "S";
         }
         else
         {
-            roundTimer.text = timer.ToString("F2") + "s";
+            roundTimer.text += timer.ToString("F2") + "S";
         }
         if (timer <= 0.0f)
         {
             mainCountdown = false;
-            ChangeImage.Instance.images[RoundManager.Instance.GetCurrentRound() - 1].transform.GetChild(0).GetComponent<Image>().material = wrong;
             EndRound();
             roundTimer.text = "";
             return;
@@ -147,7 +152,7 @@ public class RoundManager : MonoSingleton<RoundManager>
     //initialise the start of the round
     public void StartRound()
     {
-        roundTimer.text = maxTimer.ToString("F2") + "s";
+        roundTimer.text = "timer\n" + maxTimer.ToString("F2") + "s";
         roundOver = false;
         drawScript.KillTrails();
         Instantiate(button);
@@ -159,8 +164,6 @@ public class RoundManager : MonoSingleton<RoundManager>
         wordBank.transform.rotation = rot;
 
         roundCount++;
-
-        ChangeImage.Instance.ChangeImages();
         WordBank.Instance.ResetText();
     }
 

@@ -5,10 +5,14 @@ using UnityEngine.UI;
 
 public class RoundGuess : MonoSingleton<RoundGuess>
 {
+    [SerializeField] private ScoreTally score;
+    Vector3 spawnPos;
+    private bool down;
 
-    public Material correct;
-    public Material wrong;
-    public Material none;
+    private void Start()
+    {
+        spawnPos = transform.position;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,9 +21,31 @@ public class RoundGuess : MonoSingleton<RoundGuess>
             if (RoundManager.Instance.GetInRound())
             {
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Game/score_point", transform.position);
-                ChangeImage.Instance.images[RoundManager.Instance.GetCurrentRound() - 1].transform.GetChild(0).GetComponent<Image>().material = correct;
+                score.AddTally();
                 RoundManager.Instance.EndRound();
             }
         }
+    }
+
+    private void Update()
+    {
+        Vector3 pos = transform.position;
+        if (!down)
+        {
+            pos = Vector3.Slerp(pos, spawnPos + new Vector3(0, 1.5f, 0), Time.deltaTime * 0.75f);
+            if(Vector3.Distance(pos, spawnPos + new Vector3(0, 1.5f, 0)) < 0.01f)
+            {
+                down = true;
+            }
+        }
+        else
+        {
+            pos = Vector3.Slerp(pos, spawnPos + new Vector3(0, -1.5f, 0), Time.deltaTime * 0.75f);
+            if ((Vector3.Distance(pos, spawnPos + new Vector3(0, -1.5f, 0)) < 0.01f))
+            {
+                down = false;
+            }
+        }
+
     }
 }

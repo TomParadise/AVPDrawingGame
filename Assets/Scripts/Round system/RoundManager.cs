@@ -144,7 +144,7 @@ public class RoundManager : MonoSingleton<RoundManager>
         {
             mainCountdown = false;
             EndRound();
-            roundTimer.text = "";
+            roundTimer.text = "timer\n 00:00S";
             return;
         }
     }
@@ -152,7 +152,7 @@ public class RoundManager : MonoSingleton<RoundManager>
     //initialise the start of the round
     public void StartRound()
     {
-        roundTimer.text = "timer\n" + maxTimer.ToString("F2") + "s";
+        roundTimer.text = "timer\n" + maxTimer.ToString("F2") + "S";
         roundOver = false;
         drawScript.KillTrails();
         Instantiate(button);

@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RoundGuess : MonoSingleton<RoundGuess>
+public class RoundGuess : MonoBehaviour
 {
     [SerializeField] private ScoreTally score;
     Vector3 spawnPos;
     private bool down;
+    private float startTime;
 
     private void Start()
     {
         spawnPos = transform.position;
+        startTime = Time.time;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,20 +34,22 @@ public class RoundGuess : MonoSingleton<RoundGuess>
         Vector3 pos = transform.position;
         if (!down)
         {
-            pos = Vector3.Slerp(pos, spawnPos + new Vector3(0, 1.5f, 0), Time.deltaTime * 0.75f);
-            if(Vector3.Distance(pos, spawnPos + new Vector3(0, 1.5f, 0)) < 0.01f)
+            pos = Vector3.Slerp(pos, spawnPos + new Vector3(0, 0.15f, 0), (Time.time - startTime)/50);
+            if(Vector3.Distance(pos, spawnPos + new Vector3(0, 0.15f, 0)) < 0.01f)
             {
                 down = true;
+                startTime = Time.time;
             }
         }
         else
         {
-            pos = Vector3.Slerp(pos, spawnPos + new Vector3(0, -1.5f, 0), Time.deltaTime * 0.75f);
-            if ((Vector3.Distance(pos, spawnPos + new Vector3(0, -1.5f, 0)) < 0.01f))
+            pos = Vector3.Slerp(pos, spawnPos + new Vector3(0, -0.15f, 0), (Time.time - startTime) / 50);
+            if ((Vector3.Distance(pos, spawnPos + new Vector3(0, -0.15f, 0)) < 0.01f))
             {
                 down = false;
+                startTime = Time.time;
             }
         }
-
+        transform.position = pos;
     }
 }

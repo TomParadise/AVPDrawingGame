@@ -89,6 +89,7 @@ public class TimerButton : MonoBehaviour
 
                 Destroy(transform.GetChild(0).GetComponent<OffscreenIndicator>());
                 pressed = true;
+                timer = 2.0f;
             }
         }
     }

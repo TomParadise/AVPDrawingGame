@@ -136,14 +136,14 @@ MonoBehaviour:
   Path: event:/Game/score_point
   guid: 1c1b0ba5528f24458cd112f68a12d22a
   Banks:
-  - {fileID: 7000382637609822085}
+  - {fileID: 2120440246320651173}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1018
+  Length: 1404
 --- !u!114 &-6705346909403958441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
   Path: event:/Game/button_press
   guid: fd26821277bceb408d1e1292488e9888
   Banks:
-  - {fileID: 7000382637609822085}
+  - {fileID: 2120440246320651173}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -285,12 +285,12 @@ MonoBehaviour:
   Path: event:/Painting/painting
   guid: e98fbc6fb00f474ebc315a49b6e900ed
   Banks:
-  - {fileID: 7000382637609822085}
+  - {fileID: 2120440246320651173}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 9063066456218122541}
+  - {fileID: 2802876427864846059}
   MinDistance: 1
   MaxDistance: 20
   Length: 18808
@@ -380,7 +380,7 @@ MonoBehaviour:
   Path: event:/Colour_Change/colour_change
   guid: 218f76b4bdb08e408d1200390c16aef4
   Banks:
-  - {fileID: 7000382637609822085}
+  - {fileID: 2120440246320651173}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -495,6 +495,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-624755675416600618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/painting/drawing
+  m_EditorClassIdentifier: 
+  Name: drawing
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,7 +526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 7325159330490347119}
-  - {fileID: 7000382637609822085}
+  - {fileID: 2120440246320651173}
   EditorEvents:
   - {fileID: -3317889403574521883}
   - {fileID: -5073931299890021497}
@@ -522,10 +539,10 @@ MonoBehaviour:
   - {fileID: 6680332869104300807}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 7000382637609822085}
+  - {fileID: 2120440246320651173}
   StringsBanks:
   - {fileID: 7325159330490347119}
-  stringsBankWriteTime: 637236273498783117
+  stringsBankWriteTime: 637237839021129405
   cacheVersion: 3
 --- !u!114 &494179731448529444
 MonoBehaviour:
@@ -559,7 +576,7 @@ MonoBehaviour:
   Path: event:/Music/forest
   guid: 99daa59d3211834583a9f3b5a6d2c69e
   Banks:
-  - {fileID: 7000382637609822085}
+  - {fileID: 2120440246320651173}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -582,7 +599,7 @@ MonoBehaviour:
   Path: event:/Menu/menu_click
   guid: 591004af0ee0d94fba2591a9f58df8bf
   Banks:
-  - {fileID: 7000382637609822085}
+  - {fileID: 2120440246320651173}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -643,6 +660,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &2120440246320651173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/DrawItFMOD/Build/Desktop/Master Bank.bank
+  SubDir: 
+  lastModified: 637237839021059584
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &2147294325858181920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,6 +695,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &2802876427864846059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/painting/drawing
+  m_EditorClassIdentifier: 
+  Name: drawing
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &3224671390302754674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,7 +855,7 @@ MonoBehaviour:
   Path: event:/Menu/menu_play
   guid: 2cb02c9123a85546942e1b3afcb62f20
   Banks:
-  - {fileID: 7000382637609822085}
+  - {fileID: 2120440246320651173}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -883,7 +935,7 @@ MonoBehaviour:
   Path: event:/Music/menu
   guid: 786c6628a8fbae4cb741518954b78fb2
   Banks:
-  - {fileID: 7000382637609822085}
+  - {fileID: 2120440246320651173}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -941,7 +993,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/DrawItFMOD/Build/Desktop/Master Bank.strings.bank
   SubDir: 
-  lastModified: 637236273498783117
+  lastModified: 637237839021129405
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -963,6 +1015,24 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+  Exists: 0
+--- !u!114 &7459707183883996291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/DrawItFMOD/Build/Desktop/Master Bank.bank
+  SubDir: 
+  lastModified: 637236107802897190
+  LoadResult: 0
+  FileSizes: []
   Exists: 0
 --- !u!114 &7465954665124559751
 MonoBehaviour:
@@ -1066,7 +1136,7 @@ MonoBehaviour:
   Path: event:/Music/desert
   guid: 664cfebfa5f91147b173a234c6385e19
   Banks:
-  - {fileID: 7000382637609822085}
+  - {fileID: 2120440246320651173}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0

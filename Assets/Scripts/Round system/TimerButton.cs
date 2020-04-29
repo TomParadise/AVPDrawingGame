@@ -19,6 +19,10 @@ public class TimerButton : MonoBehaviour
         pos.y -= 1.0f;
         if (RoundManager.Instance.GetRoundOver())
         {
+            if(RoundManager.Instance.GetCurrentRound() == RoundManager.Instance.GetMaxRoundCount())
+            {
+
+            }
             text.text = "Next round";
             Vector3 rot = transform.eulerAngles;
             rot.y = -90;
@@ -89,7 +93,7 @@ public class TimerButton : MonoBehaviour
 
                 Destroy(transform.GetChild(0).GetComponent<OffscreenIndicator>());
                 pressed = true;
-                timer = 2.0f;
+                timer = 2.5f;
             }
         }
     }

@@ -65,7 +65,7 @@ public class RoundManager : MonoSingleton<RoundManager>
         {
             music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/desert");
         }
-        if(maxTimer == 0)
+        if (maxTimer == 0)
 
         {
 
@@ -101,6 +101,20 @@ public class RoundManager : MonoSingleton<RoundManager>
         {
             RoundCountdown();
         }
+        else if(!mainCountdown)
+        {
+            float oldPitch;
+            music.getPitch(out oldPitch);
+            if (oldPitch > 1)
+            {
+                oldPitch -= (timer / maxTimer) / (5) * Time.deltaTime;
+                if (oldPitch < 1)
+                {
+                    oldPitch = 1;
+                }
+                music.setPitch(oldPitch);
+            }
+        }
     }
 
     //countdown function for start timer
@@ -122,6 +136,11 @@ public class RoundManager : MonoSingleton<RoundManager>
         }
         else
         {
+            float oldPitch;
+            music.getPitch(out oldPitch);
+            oldPitch += (timer / maxTimer) / (5) * Time.deltaTime / (maxTimer / 2);
+            music.setPitch(oldPitch);
+
             startTimer.text = Mathf.Ceil(timer).ToString();
             timer -= Time.deltaTime;
         }
@@ -144,7 +163,7 @@ public class RoundManager : MonoSingleton<RoundManager>
         {
             mainCountdown = false;
             EndRound();
-            roundTimer.text = "timer\n 00:00S";
+            roundTimer.text = "timer\n00:00S";
             return;
         }
     }
@@ -167,7 +186,7 @@ public class RoundManager : MonoSingleton<RoundManager>
         WordBank.Instance.ResetText();
     }
 
-    //begin the initial countdown and move wordbank to behind player
+    //begin the initial countdown and hide wordbank
     public void BeginCountdown()
     {
         startCountdown = true;

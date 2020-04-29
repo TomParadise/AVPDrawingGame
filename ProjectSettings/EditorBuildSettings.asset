@@ -5,31 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/5e3b1b26a3061c24ab012a1300be5170
-    guid: 5e3b1b26a3061c24ab012a1300be5170
-  - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/b0e8ba0efab50e649952f5e999dcd384
-    guid: b0e8ba0efab50e649952f5e999dcd384
-  - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/5a4410c2f4b306747968365501b1217e
-    guid: 5a4410c2f4b306747968365501b1217e
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 753c0b018b946f548a95c3b4972096cc
   - enabled: 1
     path: Assets/Scenes/Desert.unity
     guid: 5516480a3d88db743bf171d2466c57d8
   - enabled: 1
     path: Assets/Scenes/Forest.unity
     guid: 57567f9b8e30ab14d82cba5d316dff42
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 753c0b018b946f548a95c3b4972096cc
   m_configObjects: {}

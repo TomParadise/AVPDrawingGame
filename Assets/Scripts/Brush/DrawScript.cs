@@ -139,7 +139,7 @@ public class DrawScript : MonoBehaviour
             trail.GetParticles(particles);
             for (int i = 0; i < trail.particleCount; i++)
             {
-                particles[i].remainingLifetime = 0.01f;
+                particles[i].remainingLifetime = 0.00000001f;
             }
             trail.SetParticles(particles);
         }

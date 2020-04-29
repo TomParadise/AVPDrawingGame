@@ -19,11 +19,14 @@ public class TimerButton : MonoBehaviour
         pos.y -= 1.0f;
         if (RoundManager.Instance.GetRoundOver())
         {
-            if(RoundManager.Instance.GetCurrentRound() == RoundManager.Instance.GetMaxRoundCount())
+            if (RoundManager.Instance.GetCurrentRound() == RoundManager.Instance.GetMaxRoundCount())
             {
-
+                text.text = "End round";
             }
-            text.text = "Next round";
+            else
+            {
+                text.text = "Next round";
+            }
             Vector3 rot = transform.eulerAngles;
             rot.y = -90;
             pos.x = -4;
